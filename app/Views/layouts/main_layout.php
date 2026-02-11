@@ -9,12 +9,13 @@
     <!-- Jangan gunakan ini dilingkungan produksi -->
     <!-- Gunakan CSS ini dilingkungan produksi: link_tag('assets/css/tailwindcss/tailwind-utils.css') -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <?= link_tag('assets/css/header.css') ?>
     <?= link_tag('assets/css/fonts.css') ?>
 </head>
 
 <body>
     <?= $this->include('layouts/header') ?>
-    <main class="main-content hidden">
+    <main class="main-content">
         <?= $this->renderSection('content') ?>
     </main>
     <?= $this->include('layouts/footer') ?>

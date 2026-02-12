@@ -54,12 +54,15 @@
         </div>
     </div>
     <hr class="text-gray-700">
-    <div class="more-footer-details mt-7 flex justify-between text-white/75 text-sm">
-        <span>&copy; 2026 DPRD Batang Hari. Seluruh hak cipta dilindungi.</span>
+    <div class="more-footer-details mt-7 flex justify-between items-center text-white/75 text-sm">
+        <div class="copy flex flex-col gap-0.5 font-regular">
+            <span>&copy; Copyright 2026 DPRD Batang Hari. Seluruh hak cipta dilindungi.</span>
+            <span>Dikembangkan oleh IT DPRD Batang Hari</span>
+        </div>
         <div class="flex gap-7">
-            <a href="#">Kebijakan Privasi</a>
-            <a href="#">Syarat & Ketentuan</a>
-            <a href="#">Sitemap</a>
+            <a href="#" class="font-regular transition duration-100 hover:text-blue-400">Kebijakan Privasi</a>
+            <a href="#" class="font-regular transition duration-100 hover:text-blue-400">Syarat & Ketentuan</a>
+            <a href="#" class="font-regular transition duration-100 hover:text-blue-400">Sitemap</a>
         </div>
     </div>
 </footer>

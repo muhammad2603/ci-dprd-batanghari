@@ -8,8 +8,8 @@
         <!-- Akhir Logo -->
         <!-- Company Name -->
         <div class="name flex flex-col justify-center">
-            <h1 style="line-height: 14px;">Dewan Perwakilan Rakyat Daerah</h1>
-            <span>Kabupaten Batang Hari</span>
+            <h1 class="leading-3.5">Dewan Perwakilan Rakyat Daerah</h1>
+            <span class="font-regular">Kabupaten Batang Hari</span>
         </div>
         <!-- Akhir Company Name -->
     </div>

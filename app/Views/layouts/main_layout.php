@@ -1,6 +1,6 @@
 <?php helper('html') ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="text-[14px] lg:text-[16px] xl:text-base 2xl:text-[22px]">
 
 <head>
     <meta charset="UTF-8">

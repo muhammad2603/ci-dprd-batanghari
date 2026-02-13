@@ -1,4 +1,4 @@
-<nav class="bottom-navigation hidden pt-4 pb-2 px-3 fixed bottom-0 left-0 w-full bg-neutral-50 border-t-2 border-solid  border-neutral-300 rounded-tl-3xl rounded-tr-3xl z-999999999">
+<nav class="bottom-navigation hidden sm:hidden pt-4 pb-2 px-3 fixed bottom-0 left-0 w-full bg-neutral-50 border-t-2 border-solid  border-neutral-300 rounded-tl-3xl rounded-tr-3xl z-999999999">
     <button type="button" class="p-4 absolute -top-8 left-[50%] -translate-x-[50%] bg-neutral-50 rounded-full -z-10 inset-shadow-[0px_2px_5px_-2px_rgba(0,0,0,0.40)]" aria-label="Lihat Menu Lainnya">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />

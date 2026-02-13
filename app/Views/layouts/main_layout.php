@@ -11,17 +11,23 @@
     <!-- Jangan gunakan ini dilingkungan produksi -->
     <!-- Gunakan CSS ini dilingkungan produksi: link_tag('assets/css/tailwindcss/tailwind-utils.css') -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Header CSS -->
     <?= link_tag('assets/css/header.css') ?>
+    <!-- Fonts CSS -->
     <?= link_tag('assets/css/fonts.css') ?>
 </head>
 
 <body>
-    <?= $this->include('layouts/bottom-navigation') ?>
+    <!-- Header Component -->
     <?= $this->include('layouts/header') ?>
+    <!-- Main Content -->
     <main class="main-content">
         <?= $this->renderSection('content') ?>
     </main>
+    <!-- Footer Component -->
     <?= $this->include('layouts/footer') ?>
+    <!-- Bottom Navigation -->
+    <?= $this->include('layouts/bottom-navigation') ?>
 </body>
 
 </html>

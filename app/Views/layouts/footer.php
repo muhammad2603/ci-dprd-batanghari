@@ -1,4 +1,5 @@
 <footer class="py-8 px-7 bg-slate-900">
+    <!-- Footer Details -->
     <div class="footer-details mb-9 md:mb-6 grid grid-cols-2 md:grid-cols-4 gap-6">
         <div class="slogan">
             <div class="identity flex flex-col sm:flex-row gap-2.5 sm:gap-2 text-white">
@@ -53,8 +54,12 @@
             </div>
         </div>
     </div>
+    <!-- Akhir Footer Details -->
+    <!-- Barrier -->
     <hr class="text-gray-700">
+    <!-- More Footer Details -->
     <div class="more-footer-details mt-8 md:mt-7 flex flex-col md:flex-row justify-between items-center text-white/75 md:text-sm text-center md:text-left">
+        <!-- Copyright & Information Developers -->
         <div class="copy flex flex-col gap-0.5 font-regular text-pretty">
             <span>&copy; Copyright 2026 DPRD Batang Hari. Seluruh hak cipta dilindungi.</span>
             <span>Dikembangkan oleh IT DPRD Batang Hari</span>
@@ -65,4 +70,5 @@
             <a href="#" class="font-regular transition duration-100 hover:text-blue-400 active:text-blue-400">Sitemap</a>
         </div>
     </div>
+    <!-- Akhir Footer Details -->
 </footer>

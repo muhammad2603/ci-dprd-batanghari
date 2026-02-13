@@ -16,8 +16,10 @@
     <!-- Akhir Identity Company -->
     <!-- Navigasi -->
     <nav class="relative hidden lg:flex lg:gap-5 xl:gap-8 text-gray-500/90">
+        <!-- Links Navigation -->
         <a href="<?= base_url('/') ?>" class="active font-semibold hover:text-blue-500 focus:outline-0">Beranda</a>
         <a href="#" class="hover:text-blue-500 active:text-blue-500 focus:outline-0">Profil</a>
+        <!-- Use this div if you want add dropdown navigation -->
         <div class="list-dropdown relative">
             <a href="javascript:void(0)" class="flex items-center gap-0.5 hover:text-blue-500 active:text-blue-500 focus:outline-0">
                 Daftar Anggota
@@ -25,6 +27,7 @@
                     <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                 </svg>
             </a>
+            <!-- Dropdown Navigation -->
             <div class="nav-dropdown absolute left-0 top-[130%] w-60 py-1.5 hidden flex-col bg-neutral-50 text-sm rounded-lg shadow-sm shadow-neutral-300">
                 <a href="#" class="py-2 px-4 hover:bg-blue-100 hover:text-blue-400 focus:outline-0">Anggota Dewan</a>
                 <a href="#" class="py-2 px-4 hover:bg-blue-100 hover:text-blue-400 focus:outline-0">Anggota Fraksi</a>
@@ -33,6 +36,7 @@
                 <a href="#" class="py-2 px-4 hover:bg-blue-100 hover:text-blue-400 focus:outline-0">Anggota Alat Kelengkapan</a>
             </div>
         </div>
+        <!-- Use this div if you want add dropdown navigation -->
         <div class="list-dropdown relative">
             <a href="javascript:void(0)" class="flex items-center gap-0.5 hover:text-blue-500 active:text-blue-500 focus:outline-0">
                 Berita
@@ -40,6 +44,7 @@
                     <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                 </svg>
             </a>
+            <!-- Dropdown Navigation -->
             <div class="nav-dropdown absolute left-0 top-[130%] w-60 py-1.5 hidden flex-col bg-neutral-50 text-sm rounded-lg shadow-sm shadow-neutral-300">
                 <a href="#" class="py-2 px-4 hover:bg-blue-100 hover:text-blue-400 focus:outline-0">Kegiatan Reses</a>
                 <a href="#" class="py-2 px-4 hover:bg-blue-100 hover:text-blue-400 focus:outline-0">Kegiatan Anggota</a>
@@ -50,6 +55,7 @@
         </div>
         <a href="#" class="hover:text-blue-500 focus:outline-0 active:text-blue-500">Agenda</a>
         <a href="#" class="hover:text-blue-500 focus:outline-0 active:text-blue-500">Kontak</a>
+        <!-- Mark for Navigation Current Active -->
         <div class="slide-nav-position absolute left-0 -bottom-2 w-15 h-1 bg-blue-500 rounded-full"></div>
     </nav>
     <!-- Akhir Navigasi -->

@@ -1,12 +1,6 @@
 <?= $this->extend('layouts/main_layout') ?>
 
 <?= $this->section('content') ?>
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="<?= base_url('assets/libs/swiper/swiper-bundle.css') ?>">
-<!-- Script JS Swiper -->
-<script src="<?= base_url('assets/libs/swiper/swiper-bundle.js') ?>"></script>
-<!-- Script Icons -->
-<link rel="stylesheet" href="<?= base_url('assets/css/icons.css') ?>">
 <!-- Section Slider -->
 <!-- Slider main container -->
 <section class="swiper w-full h-87 sm:h-82.5 md:h-screen aspect-video md:aspect-auto">
@@ -58,17 +52,24 @@
 </section>
 <!-- Section About -->
 <section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-[url('assets/images/backgrounds/bg-gedung-dprd.webp')] bg-no-repeat bg-cover">
+    <!-- Layer Text -->
     <div class="layer-text w-full sm:w-2/3 2xl:w-[80%] text-white">
+        <!-- Slogan -->
         <span class="font-regular py-1 px-3 bg-blue-200/60 text-sm md:text-sm text-shadow-sm tracking-wide rounded-full">Melayani dengan Integritas dan Transparansi</span>
+        <!-- Company Name -->
         <h2 class="my-4 md:my-6 lg:my-5 text-4xl lg:text-5xl xl:text-6xl tracking-wider lg:leading-14 xl:leading-17 text-shadow-md uppercase">Dewan Perwakilan Rakyat Daerah</h2>
+        <!-- Paragraph About Company -->
         <p class="text-shadow-sm text-lg sm:text-base">Menyuarakan aspirasi rakyat, mengawasi pemerintahan daerah, dan membuat regulasi untuk kesejahteraan masyarakat.</p>
+        <!-- Links -->
         <div class="links mt-5 flex gap-4.5 sm:gap-4">
+            <!-- Link Public Service -->
             <a href="#" class="py-2 md:py-2.5 px-3.5 md:px-4 flex gap-2 items-center bg-white text-base text-blue-500 rounded-lg">
                 <span>Layanan Publik</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 align-middle">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
             </a>
+            <!-- Link for All Details About Company -->
             <a href="#" class="py-2 md:py-2.5 px-3.5 md:px-4 text-base border border-solid border-white/50 bg-gray-100/20 rounded-lg backdrop-blur-xs">Tentang Kami</a>
         </div>
     </div>
@@ -76,8 +77,11 @@
 <!-- Akhir Section About -->
 <!-- Section Services Information -->
 <section class="services-information mt-5 py-24 lg:px-12 px-7 bg-gray-100/90">
+    <!-- Title Section -->
     <h2 class="mb-3 text-3xl text-center">Layanan & Informasi</h2>
+    <!-- Paragraph Section -->
     <p class="text-gray-500/90 text-center">Akses cepat ke berbagai layanan DPRD Batang Hari</p>
+    <!-- List Services -->
     <div class="services mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6.5 sm:gap-5.5">
         <!-- Layanan Peraturan Daerah -->
         <div class="service peraturan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
@@ -152,21 +156,32 @@
             </a>
         </div>
     </div>
+    <!-- Akhir List Services -->
 </section>
 <!-- Akhir Section Services Information -->
 <!-- Section Sambutan Sekwan -->
 <section class="sambutan-sekwan py-24 lg:px-12 px-7">
+    <!-- Title Section -->
     <h2 class="relative mb-3 text-3xl text-center after:absolute after:-bottom-3 after:left-[50%] after:-translate-[50%] after:w-[10%] after:h-1 after:bg-blue-500 after:rounded-full">Sambutan Sekretaris DPRD</h2>
+    <!-- Greeting Text -->
     <div class="sambutan-teks mt-4.5 sm:mt-12 pt-12 grid grid-cols-1 md:grid-cols-2 gap-13 sm:gap-10 md:gap-4 lg:gap-2">
+        <!-- Figure Image Secretary DPRD -->
         <figure class="w-full sm:w-100 h-fit relative mx-auto rounded-xl overflow-hidden">
+            <!-- Image -->
             <img src="<?= base_url('assets/images/foto-sekwan.jpg') ?>" alt="" class="w-full">
+            <!-- Figcaption Image -->
             <div class="caption-img absolute bottom-0 w-full pt-12 pb-4 px-4 font-regular text-center bg-linear-[to_bottom,transparent_10%,rgba(0,0,0,.90)_80%,rgba(0,0,0,.95)]">
+                <!-- Secretary Name -->
                 <figcaption class="font-semibold text-white tracking-wider text-2xl sm:text-lg">Muhammad Ali, S.E.</figcaption>
+                <!-- Job Title -->
                 <span class="mt-0.5 block text-lg sm:text-sm text-blue-300 text-shadow-md text-shadow-blue-200/15 tracking-wide">Sekretaris DPRD</span>
             </div>
         </figure>
+        <!-- Text Wrapper -->
         <div class="text-sambutan-wrapper">
+            <!-- Ikon Block Quotes -->
             <?= icon('block-quotes', ["class" => 'large-icon relative -top-[18px] text-blue-200']) ?>
+            <!-- Text -->
             <blockquote class="text mb-6 text-lg sm:text-base md:text-sm text-justify md:text-left text-gray-500/90 sm:leading-6 flex flex-col gap-2.5 text-pretty">
                 <p>Assalamu&#8217;alaikum Warahmatullahi Wabarakatuh,<br>Salam sejahtera bagi kita semua.</p>
                 <p>Puji dan syukur kita panjatkan ke hadirat Allah SWT, Tuhan Yang Maha Esa, atas rahmat dan karunia-Nya sehingga kita semua senantiasa diberikan kesehatan dan kesempatan untuk terus berkarya serta mengabdi kepada masyarakat.</p>
@@ -176,24 +191,34 @@
                 <p>Terima kasih atas perhatian dan kerja sama semua pihak.</p>
                 <p class="text-black font-semibold">Wassalamu&#8217;alaikum Warahmatullahi Wabarakatuh.</p>
             </blockquote>
+            <!-- Barrier -->
             <hr class="text-neutral-300">
+            <!-- Secretary About -->
             <div class="names mt-4 flex flex-col items-end font-regular">
+                <!-- Name -->
                 <span class="text-lg font-semibold">Muhammad Ali, S.E.</span>
+                <!-- Job Title -->
                 <span class="text-base sm:text-sm">Sekretaris DPRD Batang Hari</span>
             </div>
         </div>
     </div>
+    <!-- Akhir Greeting Text -->
 </section>
 <!-- Akhir Section Sambutan Sekwan -->
 <!-- Section Berita -->
 <section class="berita py-24 lg:px-12 px-7">
+    <!-- Header Section -->
     <div class="header-section flex justify-between">
+        <!-- Title Section -->
         <div class="title">
             <h2 class="mb-0.5 text-3xl">Berita Terkini</h2>
             <p class="text-gray-500/90">Informasi terbaru seputar kegiatan DPRD</p>
         </div>
+        <!-- Link Section -->
         <a href="#" class="py-2 sm:py-1.5 px-3 flex items-center gap-1.5 self-end sm:self-center font-regular sm:text-sm text-blue-600 rounded-lg hover:bg-blue-100 active:bg-blue-100 group">Lihat Semua <?= icon('arrow-right-mini') ?></a>
     </div>
+    <!-- Akhir Header Section -->
+    <!-- List Berita -->
     <div class="list-berita mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-6 lg:gap-8">
         <article class="rounded-lg overflow-hidden shadow-sm group transition duration-100 hover:shadow-md">
             <a href="#">
@@ -247,12 +272,16 @@
             </a>
         </article>
     </div>
+    <!-- Akhir List Berita -->
 </section>
 <!-- Akhir Section Berita -->
 <!-- Section Statistik Pencapaian -->
 <section class="statistic-results py-16 px-7 bg-linear-to-br from-blue-600 to-blue-900 from-20% to-100% text-white">
+    <!-- Title Section -->
     <h2 class="mb-3 text-3xl text-center">Statistik & Pencapaian</h2>
+    <!-- Paragraph Section -->
     <p class="text-center">Data dan Pencapaian DPRD Batang Hari dalam melayani masyarakat</p>
+    <!-- Statistics -->
     <div class="statistics mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-5">
         <div class="dprd-members py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-blue-500 to-blue-700 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
@@ -283,9 +312,16 @@
             <span class="font-regular text-lg md:text-sm">Rapat Tahun Ini</span>
         </div>
     </div>
+    <!-- Akhir Statistics -->
 </section>
 <!-- Akhir Section Statistik Pencapaian -->
 <!-- Script Slider Init -->
 <script src="<?= base_url('assets/js/swiper-init.js') ?>"></script>
 <!-- Akhir Section Slider -->
+<!-- Script JS Swiper -->
+<script src="<?= base_url('assets/libs/swiper/swiper-bundle.js') ?>" async></script>
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="<?= base_url('assets/libs/swiper/swiper-bundle.css') ?>">
+<!-- Script Icons -->
+<link rel="stylesheet" href="<?= base_url('assets/css/icons.css') ?>">
 <?= $this->endSection() ?>

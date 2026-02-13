@@ -50,19 +50,19 @@
         </div>
         <a href="#" class="hover:text-blue-500 focus:outline-0">Agenda</a>
         <a href="#" class="hover:text-blue-500 focus:outline-0">Kontak</a>
-        <div class="slide-nav-position absolute left-0 -bottom-2 w-[60px] h-[4px] bg-blue-500 rounded-full"></div>
+        <div class="slide-nav-position absolute left-0 -bottom-2 w-15 h-1 bg-blue-500 rounded-full"></div>
     </nav>
     <!-- Akhir Navigasi -->
     <!-- Search Input Wrapper -->
     <div class="search-input">
         <!-- Button Search -->
-        <button type="button" class="cursor-pointer focus:outline-0 group" title="Cari Sesuatu...">
+        <button type="button" class="cursor-pointer focus:outline-0 group" title="Pencarian" aria-label="Pencarian">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 hover:stroke-blue-500 group-focus:stroke-blue-500">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
         </button>
         <!-- Search Input -->
-        <input type="search" name="__search" placeholder="Cari Sesuatu Disini..." id="searchInput" class="hidden absolute -bottom-9 right-7 w-62.5 py-1 px-2.5 bg-neutral-50 text-sm border border-solid border-neutral-300 rounded-full">
+        <input type="search" name="__search" placeholder="Cari..." id="searchInput" class="hidden absolute -bottom-9 right-7 w-62.5 py-1 px-2.5 bg-neutral-50 text-sm border border-solid border-neutral-300 rounded-full">
     </div>
     <!-- Akhir Search Input Wrapper -->
 </header>

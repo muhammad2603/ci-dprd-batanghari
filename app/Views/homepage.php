@@ -15,7 +15,7 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
             <figure class="w-full h-full swiper-slide relative">
-                <img src="https://www.mediainvestigasi.net/wp-content/uploads/2024/09/IMG-20240901-WA0024.jpg" alt="" class="w-full h-full object-cover brightness-45">
+                <img src="https://www.mediainvestigasi.net/wp-content/uploads/2024/09/IMG-20240901-WA0024.jpg" alt="" class="w-full h-full object-cover brightness-35">
                 <div class="slider-informations w-[50%] absolute top-[55%] left-24 -translate-y-[50%] text-white text-pretty">
                     <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
                     <h2 class="mt-3.5 text-5xl leading-15 text-shadow-md">Pelantikan Anggota DPRD Periode 2024-2029</h2>
@@ -24,7 +24,7 @@
                 </div>
             </figure>
             <figure class="w-full h-full swiper-slide relative">
-                <img src="https://cdn.antaranews.com/cache/1200x800/2025/04/29/IMG-20250429-WA0003_2.jpg" alt="" class="w-full h-full object-cover brightness-45">
+                <img src="https://cdn.antaranews.com/cache/1200x800/2025/04/29/IMG-20250429-WA0003_2.jpg" alt="" class="w-full h-full object-cover brightness-35">
                 <div class="slider-informations w-[50%] absolute top-[55%] left-24 -translate-y-[50%] text-white text-pretty">
                     <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
                     <h2 class="mt-3.5 text-5xl leading-15 text-shadow-md">DPRD Batanghari Gelar Rapat Paripurna...</h2>
@@ -33,11 +33,11 @@
                 </div>
             </figure>
             <figure class="w-full h-full swiper-slide relative">
-                <img src="https://jambilink.id/sites/jambilink.id/files/2024-12/Rapat-Paripurna-DPRD-dalam-Rangkaian-Acara-HUT-Kabupaten-Batanghari-ke-76-Tahun.jpg" alt="" class="w-full h-full object-cover brightness-45">
+                <img src="https://jambiekspres.disway.id/upload/b1252dfe2022c93c8e660d3504498fda.jpg" alt="" class="w-full h-full object-cover brightness-35">
                 <div class="slider-informations w-[50%] absolute top-[55%] left-24 -translate-y-[50%] text-white text-pretty">
                     <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
-                    <h2 class="mt-3.5 text-5xl leading-15 text-shadow-md">DPRD Batang Hari Merayakan HUT...</h2>
-                    <p class="mt-5 text-sm leading-5.5 text-shadow-md">Mudah-mudahan Batanghari semakin dewasa dan matang dalam segala aspek pembangunan. Sinergi antara Pemerintah Provinsi dan Kabupaten menjadi kunci mewujudkan Jambi yang lebih maju</p>
+                    <h2 class="mt-3.5 text-5xl leading-15 text-shadow-md">DPRD Kabupaten Batang Hari Sampaikan Ucapan...</h2>
+                    <p class="mt-5 text-sm leading-5.5 text-shadow-md">Ketua DPRD Kabupaten Batanghari, Rahmad Hasrofi, SE, bersama Wakil Ketua DPRD Hj. Elfirsto Nopsiami AR, S.H dan Muhammad Firdaus, menyampaikan harapan agar pers terus menjalankan fungsi kontrol sosial secara profesional, berimbang, dan bertanggung jawab.</p>
                     <a href="#" class="mt-10 w-fit py-2.5 px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
                 </div>
             </figure>

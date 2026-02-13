@@ -253,29 +253,29 @@
 <section class="statistic-results py-16 px-7 bg-linear-to-br from-blue-600 to-blue-900 from-20% to-100% text-white">
     <h2 class="mb-3 text-3xl text-center">Statistik & Pencapaian</h2>
     <p class="text-center">Data dan Pencapaian DPRD Batang Hari dalam melayani masyarakat</p>
-    <div class="statistics mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-        <div class="dprd-members py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30">
+    <div class="statistics mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-5">
+        <div class="dprd-members py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-blue-500 to-blue-700 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
                 <?= icon('users', ['class' => 'medium-icon text-white']) ?>
             </div>
             <span class="mt-1 font-regular font-semibold text-3xl tracking-wider">45</span>
             <span class="font-regular text-lg md:text-sm">Anggota DPRD</span>
         </div>
-        <div class="peraturan-daerah py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30">
+        <div class="peraturan-daerah py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-emerald-500 to-emerald-600 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
                 <?= icon('document', ['class' => 'medium-icon text-white']) ?>
             </div>
             <span class="mt-1 font-regular font-semibold text-3xl tracking-wider">127</span>
             <span class="font-regular text-lg md:text-sm">Peraturan Daerah</span>
         </div>
-        <div class="peraturan-daerah py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30">
+        <div class="peraturan-daerah py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-purple-500 to-purple-700 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
                 <?= icon('checklist', ['class' => 'medium-icon text-white']) ?>
             </div>
             <span class="mt-1 font-regular font-semibold text-3xl tracking-wider">86</span>
             <span class="font-regular text-lg md:text-sm">Aspirasi Ditindaklanjuti</span>
         </div>
-        <div class="total-rapat-tahunan py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30">
+        <div class="total-rapat-tahunan py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-orange-500 to-orange-700 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
                 <?= icon('calendar', ['class' => 'medium-icon text-white']) ?>
             </div>

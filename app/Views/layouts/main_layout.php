@@ -11,17 +11,24 @@
     <!-- Jangan gunakan ini dilingkungan produksi -->
     <!-- Gunakan CSS ini dilingkungan produksi: link_tag('assets/css/tailwindcss/tailwind-utils.css') -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- Header CSS -->
-    <?= link_tag('assets/css/header.css') ?>
     <!-- Fonts CSS -->
     <?= link_tag('assets/css/fonts.css') ?>
+    <!-- Tambahkan logika preload disetiap halaman yang membutuhkannya -->
+    <link rel="preload" as="image" href="<?= base_url('assets/images/backgrounds/bg-gedung-dprd-batang-hari.webp') ?>">
+    <!-- Gunakan preload jika gambar tersebut berukuran besar -->
+    <style>
+        /* .swiper,
+        .swiper * {
+            height: 100%;
+        } */
+    </style>
 </head>
 
 <body>
     <!-- Header Component -->
     <?= $this->include('layouts/header') ?>
     <!-- Main Content -->
-    <main class="main-content">
+    <main class="main-content grid grid-cols-1 gap-0">
         <?= $this->renderSection('content') ?>
     </main>
     <!-- Footer Component -->

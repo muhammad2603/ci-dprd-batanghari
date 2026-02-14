@@ -1,69 +1,70 @@
 <?= $this->extend('layouts/main_layout') ?>
-
 <?= $this->section('content') ?>
-<!-- Section Slider -->
-<!-- Slider main container -->
-<section class="swiper w-full h-87 sm:h-82.5 md:h-screen aspect-video md:aspect-auto">
+<!-- Slider Main Container -->
+<section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:min-h-screen lg:h-screen aspect-video md:aspect-auto overflow-hidden" id="swiperWrapper">
     <!-- @SwiperJS -->
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <figure class="w-full h-full swiper-slide relative">
-            <img src="https://www.mediainvestigasi.net/wp-content/uploads/2024/09/IMG-20240901-WA0024.jpg" alt="" class="w-full h-full object-cover brightness-35">
-            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
+        <figure class="h-full swiper-slide invisible">
+            <img src="https://www.mediainvestigasi.net/wp-content/uploads/2024/09/IMG-20240901-WA0024.jpg" alt="" class="w-full h-screen object-cover aspect-video brightness-35 overflow-hidden" loading="lazy">
+            <div class="swiper-lazy-preloader"></div>
+            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[50%] lg:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
                 <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
                 <h2 class="mt-4 lg:mt-3.5 text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-13 xl:leading-15 text-shadow-md">Pelantikan Anggota DPRD Periode 2024-2029</h2>
-                <p class="sm:mt-3 md:mt-5 hidden sm:block md:text-lg text-sm 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">Pelantikan Anggota DPRD yang baru dengan komitmen melayani masyarakat dengan dedikasi tinggi</p>
+                <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">Pelantikan Anggota DPRD yang baru dengan komitmen melayani masyarakat dengan dedikasi tinggi</p>
                 <a href="#" class="mt-5 md:mt-10 w-fit py-2 px-3.5 sm:py-2.5 sm:px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
             </div>
         </figure>
-        <figure class="w-full h-full swiper-slide relative">
-            <img src="https://cdn.antaranews.com/cache/1200x800/2025/04/29/IMG-20250429-WA0003_2.jpg" alt="" class="w-full h-full object-cover brightness-35">
-            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
+        <figure class="h-full swiper-slide">
+            <img src="https://cdn.antaranews.com/cache/1200x800/2025/04/29/IMG-20250429-WA0003_2.jpg" alt="" class="w-full h-screen object-cover aspect-video brightness-35 overflow-hidden" loading="lazy">
+            <div class="swiper-lazy-preloader"></div>
+            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[50%] lg:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
                 <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
                 <h2 class="mt-4 lg:mt-3.5 text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-13 xl:leading-15 text-shadow-md">DPRD Batanghari Gelar Rapat Paripurna...</h2>
-                <p class="sm:mt-3 md:mt-5 hidden sm:block md:text-lg text-sm 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">LKPJ Akhir Tahun Anggaran wajib disampaikan kepada DPRD paling lambat tiga bulan setelah tahun anggaran berakhir. Setelah LKPJ ini disampaikan, DPRD akan membentuk tim khusus untuk membahas laporan tersebut sebelum mencapai kesepakatan</p>
+                <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">LKPJ Akhir Tahun Anggaran wajib disampaikan kepada DPRD paling lambat tiga bulan setelah tahun anggaran berakhir. Setelah LKPJ ini disampaikan, DPRD akan membentuk tim khusus untuk membahas laporan tersebut sebelum mencapai kesepakatan</p>
                 <a href="#" class="mt-5 md:mt-10 w-fit py-2 px-3.5 sm:py-2.5 sm:px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
             </div>
         </figure>
-        <figure class="w-full h-full swiper-slide relative">
-            <img src="https://jambiekspres.disway.id/upload/b1252dfe2022c93c8e660d3504498fda.jpg" alt="" class="w-full h-full object-cover brightness-35">
-            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
+        <figure class="h-full swiper-slide invisible">
+            <img src="https://jambiekspres.disway.id/upload/b1252dfe2022c93c8e660d3504498fda.jpg" alt="" class="w-full h-screen object-cover aspect-video brightness-35 overflow-hidden" loading="lazy">
+            <div class="swiper-lazy-preloader"></div>
+            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[50%] lg:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
                 <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
                 <h2 class="mt-4 lg:mt-3.5 text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-13 xl:leading-15 text-shadow-md">DPRD Kabupaten Batang Hari Sampaikan Ucapan...</h2>
-                <p class="sm:mt-3 md:mt-5 hidden sm:block md:text-lg text-sm 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">Ketua DPRD Kabupaten Batanghari, Rahmad Hasrofi, SE, bersama Wakil Ketua DPRD Hj. Elfirsto Nopsiami AR, S.H dan Muhammad Firdaus, menyampaikan harapan agar pers terus menjalankan fungsi kontrol sosial secara profesional, berimbang, dan bertanggung jawab.</p>
+                <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">Ketua DPRD Kabupaten Batanghari, Rahmad Hasrofi, SE, bersama Wakil Ketua DPRD Hj. Elfirsto Nopsiami AR, S.H dan Muhammad Firdaus, menyampaikan harapan agar pers terus menjalankan fungsi kontrol sosial secara profesional, berimbang, dan bertanggung jawab.</p>
                 <a href="#" class="mt-5 md:mt-10 w-fit py-2 px-3.5 sm:py-2.5 sm:px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
             </div>
         </figure>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
-
     <!-- If we need navigation buttons -->
-    <div class="custom-button-prev hidden md:block p-2 absolute top-[50%] left-7 bg-gray-400/30 z-999 text-white border border-solid border-white/40 rounded-full backdrop-blur-md cursor-pointer">
+    <div class="custom-button-prev hidden md:block p-2 absolute top-[50%] left-7 bg-gray-400/30 z-999 text-white border border-solid border-white/40 rounded-full backdrop-blur-md cursor-pointer focus:outline-blue-300">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 aspect-square">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
         </svg>
     </div>
-    <div class="custom-button-next hidden md:block p-2 absolute top-[50%] right-7 bg-gray-400/30 z-999 text-white border border-solid border-white/40 rounded-full backdrop-blur-md cursor-pointer">
+    <div class="custom-button-next hidden md:block p-2 absolute top-[50%] right-7 bg-gray-400/30 z-999 text-white border border-solid border-white/40 rounded-full backdrop-blur-md cursor-pointer focus:outline-blue-300">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 aspect-square">
             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
         </svg>
     </div>
 </section>
+<!-- Akhir Slider Main Container -->
 <!-- Section About -->
-<section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-[url('assets/images/backgrounds/bg-gedung-dprd.webp')] bg-no-repeat bg-cover">
+<section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-[url('assets/images/backgrounds/bg-gedung-dprd-batang-hari.webp')] bg-no-repeat bg-cover">
     <!-- Layer Text -->
     <div class="layer-text w-full sm:w-2/3 2xl:w-[80%] text-white">
         <!-- Slogan -->
         <span class="font-regular py-1 px-3 bg-blue-200/60 text-sm md:text-sm text-shadow-sm tracking-wide rounded-full">Melayani dengan Integritas dan Transparansi</span>
         <!-- Company Name -->
-        <h2 class="my-4 md:my-6 lg:my-5 text-4xl lg:text-5xl xl:text-6xl tracking-wider lg:leading-14 xl:leading-17 text-shadow-md uppercase">Dewan Perwakilan Rakyat Daerah</h2>
+        <h2 class="my-4 md:my-6 lg:my-5 text-4xl lg:text-5xl xl:text-6xl tracking-wider lg:leading-14 xl:leading-17 text-shadow-lg uppercase">Dewan Perwakilan Rakyat Daerah</h2>
         <!-- Paragraph About Company -->
-        <p class="text-shadow-sm text-lg sm:text-base">Menyuarakan aspirasi rakyat, mengawasi pemerintahan daerah, dan membuat regulasi untuk kesejahteraan masyarakat.</p>
+        <p class="text-shadow-lg text-lg sm:text-base xl:text-lg">Menyuarakan aspirasi rakyat, mengawasi pemerintahan daerah, dan membuat regulasi untuk kesejahteraan masyarakat.</p>
         <!-- Links -->
         <div class="links mt-5 flex gap-4.5 sm:gap-4">
             <!-- Link Public Service -->
-            <a href="#" class="py-2 md:py-2.5 px-3.5 md:px-4 flex gap-2 items-center bg-white text-base text-blue-500 rounded-lg">
+            <a href="#" class="py-2 md:py-2.5 px-3.5 md:px-4 flex gap-2 items-center bg-white text-base text-blue-500 transition duration-150 ease-in hover:bg-blue-500 hover:text-white rounded-lg">
                 <span>Layanan Publik</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 align-middle">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
@@ -87,10 +88,10 @@
         <div class="service peraturan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
             <a href="#" class="py-6 px-5 block group">
                 <div class="icon-service-wrapper w-fit p-2 bg-blue-500 border border-solid border-blue-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('document', ['class' => 'large-icon text-white']) ?>
+                    <?= icon('document', ['class' => 'size-6 text-white']) ?>
                 </div>
                 <div class="service-details mt-2.5">
-                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Peraturan Daerah</h3>
+                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500 group-active:text-blue-500">Peraturan Daerah</h3>
                     <p class="text-base sm:text-sm mt-1 text-gray-500/90">Akses dokumen peraturan dan kebijakan daerah</p>
                 </div>
             </a>
@@ -99,7 +100,7 @@
         <div class="service profil-anggota bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
             <a href="#" class="py-6 px-5 block group">
                 <div class="icon-service-wrapper w-fit p-2 bg-emerald-400 border border-solid border-emerald-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('users', ['class' => 'large-icon text-white']) ?>
+                    <?= icon('users', ['class' => 'size-6 text-white']) ?>
                 </div>
                 <div class="service-details mt-2.5">
                     <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Profil Anggota</h3>
@@ -111,7 +112,7 @@
         <div class="service jadwal-rapat bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
             <a href="#" class="py-6 px-5 block group">
                 <div class="icon-service-wrapper w-fit p-2 bg-purple-500 border border-solid border-purple-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('calendar', ['class' => 'large-icon text-white']) ?>
+                    <?= icon('calendar', ['class' => 'size-6 text-white']) ?>
                 </div>
                 <div class="service-details mt-2.5">
                     <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Jadwal Rapat</h3>
@@ -123,7 +124,7 @@
         <div class="service aspirasi-masyarakat bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
             <a href="#" class="py-6 px-5 block group">
                 <div class="icon-service-wrapper w-fit p-2 bg-orange-500 border border-solid border-orange-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('message', ['class' => 'large-icon text-white']) ?>
+                    <?= icon('message', ['class' => 'size-6 text-white']) ?>
                 </div>
                 <div class="service-details mt-2.5">
                     <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Aspirasi Masyarakat</h3>
@@ -135,7 +136,7 @@
         <div class="service laporan-kegiatan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
             <a href="#" class="py-6 px-5 block group">
                 <div class="icon-service-wrapper w-fit p-2 bg-red-500 border border-solid border-red-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('book', ['class' => 'large-icon text-white']) ?>
+                    <?= icon('book', ['class' => 'size-6 text-white']) ?>
                 </div>
                 <div class="service-details mt-2.5">
                     <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Laporan Kegiatan</h3>
@@ -147,7 +148,7 @@
         <div class="service informasi-publik bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
             <a href="#" class="py-6 px-5 block group">
                 <div class="icon-service-wrapper w-fit p-2 bg-teal-500 border border-solid border-teal-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('office', ['class' => 'large-icon text-white']) ?>
+                    <?= icon('office', ['class' => 'size-6 text-white']) ?>
                 </div>
                 <div class="service-details mt-2.5">
                     <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Informasi Publik</h3>
@@ -168,9 +169,9 @@
         <!-- Figure Image Secretary DPRD -->
         <figure class="w-full sm:w-100 h-fit relative mx-auto rounded-xl overflow-hidden">
             <!-- Image -->
-            <img src="<?= base_url('assets/images/foto-sekwan.jpg') ?>" alt="" class="w-full">
+            <img src="<?= base_url('assets/images/foto-sekwan-dprd-batang-hari.webp') ?>" alt="Sekretaris DPRD Kabupaten Batang Hari" class="w-full h-full aspect-4/5 brightness-115 select-none">
             <!-- Figcaption Image -->
-            <div class="caption-img absolute bottom-0 w-full pt-12 pb-4 px-4 font-regular text-center bg-linear-[to_bottom,transparent_10%,rgba(0,0,0,.90)_80%,rgba(0,0,0,.95)]">
+            <div class="caption-img absolute bottom-0 w-full pt-12 pb-4 px-4 font-regular text-center bg-linear-[to_bottom,transparent_15%,rgba(0,0,0,.70)_80%,rgba(0,0,0,.95)]">
                 <!-- Secretary Name -->
                 <figcaption class="font-semibold text-white tracking-wider text-2xl sm:text-lg">Muhammad Ali, S.E.</figcaption>
                 <!-- Job Title -->
@@ -180,9 +181,9 @@
         <!-- Text Wrapper -->
         <div class="text-sambutan-wrapper">
             <!-- Ikon Block Quotes -->
-            <?= icon('block-quotes', ["class" => 'large-icon relative -top-[18px] text-blue-200']) ?>
+            <?= icon('block-quotes', ["class" => 'size-8 relative -top-[18px] text-blue-200']) ?>
             <!-- Text -->
-            <blockquote class="text mb-6 text-lg sm:text-base md:text-sm text-justify md:text-left text-gray-500/90 sm:leading-6 flex flex-col gap-2.5 text-pretty">
+            <blockquote class="text mb-6 text-lg sm:text-base md:text-sm md:text-left text-gray-500/90 sm:leading-6 flex flex-col gap-2.5 text-pretty">
                 <p>Assalamu&#8217;alaikum Warahmatullahi Wabarakatuh,<br>Salam sejahtera bagi kita semua.</p>
                 <p>Puji dan syukur kita panjatkan ke hadirat Allah SWT, Tuhan Yang Maha Esa, atas rahmat dan karunia-Nya sehingga kita semua senantiasa diberikan kesehatan dan kesempatan untuk terus berkarya serta mengabdi kepada masyarakat.</p>
                 <p>Sekretariat DPRD Kabupaten Batang Hari memiliki komitmen untuk memberikan dukungan administratif dan teknis secara profesional dalam menunjang pelaksanaan tugas dan fungsi DPRD, baik dalam bidang legislasi, anggaran, maupun pengawasan. Kami terus berupaya meningkatkan kualitas pelayanan, transparansi, serta akuntabilitas kinerja sebagai bentuk tanggung jawab kepada masyarakat.</p>
@@ -231,7 +232,7 @@
                         <?= icon('clock-outline') ?>
                         <time datetime="2026-02-11">11 Februari 2026</time>
                     </span>
-                    <h3 class="mb-2 text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+                    <h3 class="mb-2 text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500 group-active:text-blue-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
                     <p class="mb-4.5 md:mb-3 text-base md:text-sm text-gray-500/90">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis debitis est aliquam at officia unde et repellat doloremque praesentium quisquam.</p>
                     <span class="flex items-center gap-1.5 font-regular text-base md:text-sm text-blue-600">Baca Selengkapnya <?= icon('arrow-right-mini') ?></span>
                 </div>
@@ -248,7 +249,7 @@
                         <?= icon('clock-outline') ?>
                         <time datetime="2026-02-05">05 Februari 2026</time>
                     </span>
-                    <h3 class="mb-2 text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
+                    <h3 class="mb-2 text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500 group-active:text-blue-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h3>
                     <p class="mb-4.5 md:mb-3 text-base md:text-sm text-gray-500/90">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis debitis est aliquam at officia unde et repellat doloremque praesentium quisquam.</p>
                     <span class="flex items-center gap-1.5 font-regular text-base md:text-sm text-blue-600">Baca Selengkapnya <?= icon('arrow-right-mini') ?></span>
                 </div>
@@ -285,28 +286,28 @@
     <div class="statistics mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 sm:gap-5">
         <div class="dprd-members py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-blue-500 to-blue-700 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
-                <?= icon('users', ['class' => 'medium-icon text-white']) ?>
+                <?= icon('users', ['class' => 'size-6 text-white']) ?>
             </div>
             <span class="mt-1 font-regular font-semibold text-3xl tracking-wider">45</span>
             <span class="font-regular text-lg md:text-sm">Anggota DPRD</span>
         </div>
         <div class="peraturan-daerah py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-emerald-500 to-emerald-600 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
-                <?= icon('document', ['class' => 'medium-icon text-white']) ?>
+                <?= icon('document', ['class' => 'size-6 text-white']) ?>
             </div>
             <span class="mt-1 font-regular font-semibold text-3xl tracking-wider">127</span>
             <span class="font-regular text-lg md:text-sm">Peraturan Daerah</span>
         </div>
         <div class="peraturan-daerah py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-purple-500 to-purple-700 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
-                <?= icon('checklist', ['class' => 'medium-icon text-white']) ?>
+                <?= icon('checklist', ['class' => 'size-6 text-white']) ?>
             </div>
             <span class="mt-1 font-regular font-semibold text-3xl tracking-wider">86</span>
             <span class="font-regular text-lg md:text-sm">Aspirasi Ditindaklanjuti</span>
         </div>
         <div class="total-rapat-tahunan py-6 flex flex-col items-center gap-2 bg-white/15 border border-solid border-white/40 rounded-xl backdrop-blur-xl group transition duration-150 ease-in hover:bg-white/30 active:bg-white/30">
             <div class="icon-statistic w-fit p-3 bg-linear-to-br from-orange-500 to-orange-700 rounded-full transition duration-150 group-hover:scale-105 group-active:scale-105">
-                <?= icon('calendar', ['class' => 'medium-icon text-white']) ?>
+                <?= icon('calendar', ['class' => 'size-6 text-white']) ?>
             </div>
             <span class="mt-1 font-regular font-semibold text-3xl tracking-wider">52</span>
             <span class="font-regular text-lg md:text-sm">Rapat Tahun Ini</span>
@@ -315,13 +316,10 @@
     <!-- Akhir Statistics -->
 </section>
 <!-- Akhir Section Statistik Pencapaian -->
+<!-- Swiper JS -->
+<script src="<?= base_url('assets/libs/swiper/swiper-bundle.js') ?>"></script>
 <!-- Script Slider Init -->
 <script src="<?= base_url('assets/js/swiper-init.js') ?>"></script>
-<!-- Akhir Section Slider -->
-<!-- Script JS Swiper -->
-<script src="<?= base_url('assets/libs/swiper/swiper-bundle.js') ?>" async></script>
 <!-- Swiper CSS -->
 <link rel="stylesheet" href="<?= base_url('assets/libs/swiper/swiper-bundle.css') ?>">
-<!-- Script Icons -->
-<link rel="stylesheet" href="<?= base_url('assets/css/icons.css') ?>">
 <?= $this->endSection() ?>

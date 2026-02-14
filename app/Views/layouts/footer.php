@@ -48,9 +48,9 @@
             </div>
             <span class="font-regular text-lg sm:text-base md:text-sm text-white">Ikuti Kami</span>
             <div class="media-socials mt-4.5 md:mt-3 flex gap-5 md:gap-2.5 text-white">
-                <a href="#" class="py-2 px-2 bg-slate-800 rounded-xl transition duration-150 ease-in hover:bg-blue-600 active:text-blue-600" title="Facebook Resmi DPRD Batang Hari"><?= icon('facebook', ["class" => 'small-icon']) ?></a>
-                <a href="#" class="py-2 px-2 bg-slate-800 rounded-xl transition duration-150 ease-in hover:bg-pink-500 active:text-pink-500" title="Instagram Resmi DPRD Batang Hari"><?= icon('instagram', ["class" => 'small-icon']) ?></a>
-                <a href="#" class="py-2 px-2 bg-slate-800 rounded-xl transition duration-150 ease-in hover:bg-red-500 active:text-red-500" title="YouTube Resmi DPRD Batang Hari"><?= icon('youtube', ["class" => 'small-icon']) ?></a>
+                <a href="#" class="py-2 px-2 bg-slate-800 rounded-xl transition duration-150 ease-in hover:bg-blue-600 active:text-blue-600" title="Facebook Resmi DPRD Batang Hari"><?= icon('facebook', ["class" => 'size-3']) ?></a>
+                <a href="#" class="py-2 px-2 bg-slate-800 rounded-xl transition duration-150 ease-in hover:bg-pink-500 active:text-pink-500" title="Instagram Resmi DPRD Batang Hari"><?= icon('instagram', ["class" => 'size-3']) ?></a>
+                <a href="#" class="py-2 px-2 bg-slate-800 rounded-xl transition duration-150 ease-in hover:bg-red-500 active:text-red-500" title="YouTube Resmi DPRD Batang Hari"><?= icon('youtube', ["class" => 'size-3']) ?></a>
             </div>
         </div>
     </div>

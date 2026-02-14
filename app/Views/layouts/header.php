@@ -3,7 +3,9 @@
     <div class="identity flex gap-2.5">
         <!-- Logo -->
         <figure class="logo">
-            <?= img(["src" => 'assets/images/logo/logo-dprd-batanghari.webp', "alt" => 'Logo DPRD Kabupaten Batang Hari', "class" => 'w-10 sm:w-12 lg:w-12.5 2xl:w-13 aspect-square']) ?>
+            <a href="<?= base_url() ?>">
+                <?= img(["src" => 'assets/images/logo/logo-dprd-batanghari.webp', "alt" => 'Logo DPRD Kabupaten Batang Hari', "class" => 'w-10 sm:w-12 lg:w-12.5 2xl:w-13 aspect-square']) ?>
+            </a>
         </figure>
         <!-- Akhir Logo -->
         <!-- Company Name -->
@@ -17,7 +19,7 @@
     <!-- Navigasi -->
     <nav class="relative hidden lg:flex lg:gap-5 xl:gap-8 text-gray-500/90">
         <!-- Links Navigation -->
-        <a href="<?= base_url('/') ?>" class="active font-semibold hover:text-blue-500 focus:outline-0">Beranda</a>
+        <a href="<?= base_url('/') ?>" class="active font-semibold text-blue-500 focus:outline-0">Beranda</a>
         <a href="#" class="hover:text-blue-500 active:text-blue-500 focus:outline-0">Profil</a>
         <!-- Use this div if you want add dropdown navigation -->
         <div class="list-dropdown relative">

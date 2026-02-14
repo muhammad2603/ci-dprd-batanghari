@@ -31,17 +31,17 @@ var Swiper = (function () {
   function extend$1(target = {}, src = {}) {
     const noExtend = ['__proto__', 'constructor', 'prototype'];
     Object.keys(src).filter(key => noExtend.indexOf(key) < 0).forEach(key => {
-      if (typeof target[key] === 'undefined') target[key] = src[key];else if (isObject$1(src[key]) && isObject$1(target[key]) && Object.keys(src[key]).length > 0) {
+      if (typeof target[key] === 'undefined') target[key] = src[key]; else if (isObject$1(src[key]) && isObject$1(target[key]) && Object.keys(src[key]).length > 0) {
         extend$1(target[key], src[key]);
       }
     });
   }
   const ssrDocument = {
     body: {},
-    addEventListener() {},
-    removeEventListener() {},
+    addEventListener() { },
+    removeEventListener() { },
     activeElement: {
-      blur() {},
+      blur() { },
       nodeName: ''
     },
     querySelector() {
@@ -55,7 +55,7 @@ var Swiper = (function () {
     },
     createEvent() {
       return {
-        initEvent() {}
+        initEvent() { }
       };
     },
     createElement() {
@@ -63,7 +63,7 @@ var Swiper = (function () {
         children: [],
         childNodes: [],
         style: {},
-        setAttribute() {},
+        setAttribute() { },
         getElementsByTagName() {
           return [];
         }
@@ -107,16 +107,16 @@ var Swiper = (function () {
       search: ''
     },
     history: {
-      replaceState() {},
-      pushState() {},
-      go() {},
-      back() {}
+      replaceState() { },
+      pushState() { },
+      go() { },
+      back() { }
     },
     CustomEvent: function CustomEvent() {
       return this;
     },
-    addEventListener() {},
-    removeEventListener() {},
+    addEventListener() { },
+    removeEventListener() { },
     getComputedStyle() {
       return {
         getPropertyValue() {
@@ -124,11 +124,11 @@ var Swiper = (function () {
         }
       };
     },
-    Image() {},
-    Date() {},
+    Image() { },
+    Date() { },
     screen: {},
-    setTimeout() {},
-    clearTimeout() {},
+    setTimeout() { },
+    clearTimeout() { },
     matchMedia() {
       return {};
     },
@@ -976,7 +976,8 @@ var Swiper = (function () {
         slideSize = (swiperSize - (params.slidesPerView - 1) * spaceBetween) / params.slidesPerView;
         if (params.roundLengths) slideSize = Math.floor(slideSize);
         if (slide) {
-          slide.style[swiper.getDirectionLabel('width')] = `${slideSize}px`;
+          // PERINGATAN PEMBERITAHUAN: BAGIAN BAWAH INI DIKOMENTAR KARENA MEMBERIKAN INLINE STYLE YANG MEMPENGARUHI KEAMANAN CSP SAAT DITERAPKAN
+          // slide.style[swiper.getDirectionLabel('width')] = `${slideSize}px`;
         }
       }
       if (slide) {
@@ -1711,7 +1712,7 @@ var Swiper = (function () {
     const minTranslate = swiper.minTranslate();
     const maxTranslate = swiper.maxTranslate();
     let newTranslate;
-    if (translateBounds && translate > minTranslate) newTranslate = minTranslate;else if (translateBounds && translate < maxTranslate) newTranslate = maxTranslate;else newTranslate = translate;
+    if (translateBounds && translate > minTranslate) newTranslate = minTranslate; else if (translateBounds && translate < maxTranslate) newTranslate = maxTranslate; else newTranslate = translate;
 
     // Update progress
     swiper.updateProgress(newTranslate);
@@ -1799,7 +1800,7 @@ var Swiper = (function () {
     } = swiper;
     let dir = direction;
     if (!dir) {
-      if (activeIndex > previousIndex) dir = 'next';else if (activeIndex < previousIndex) dir = 'prev';else dir = 'reset';
+      if (activeIndex > previousIndex) dir = 'next'; else if (activeIndex < previousIndex) dir = 'prev'; else dir = 'reset';
     }
     swiper.emit(`transition${step}`);
     if (runCallbacks && dir === 'reset') {
@@ -1915,7 +1916,7 @@ var Swiper = (function () {
     // Update progress
     swiper.updateProgress(translate);
     let direction;
-    if (slideIndex > activeIndex) direction = 'next';else if (slideIndex < activeIndex) direction = 'prev';else direction = 'reset';
+    if (slideIndex > activeIndex) direction = 'next'; else if (slideIndex < activeIndex) direction = 'prev'; else direction = 'reset';
 
     // initial virtual
     const isVirtual = swiper.virtual && swiper.params.virtual.enabled;
@@ -3137,7 +3138,7 @@ var Swiper = (function () {
         return;
       }
       if (swiper.swipeDirection === 'next') {
-        if (ratio >= params.longSwipesRatio) swiper.slideTo(params.rewind && swiper.isEnd ? rewindFirstIndex : stopIndex + increment);else swiper.slideTo(stopIndex);
+        if (ratio >= params.longSwipesRatio) swiper.slideTo(params.rewind && swiper.isEnd ? rewindFirstIndex : stopIndex + increment); else swiper.slideTo(stopIndex);
       }
       if (swiper.swipeDirection === 'prev') {
         if (ratio > 1 - params.longSwipesRatio) {
@@ -3543,24 +3544,24 @@ var Swiper = (function () {
     const suffixes = prepareClasses(['initialized', params.direction, {
       'free-mode': swiper.params.freeMode && params.freeMode.enabled
     }, {
-      'autoheight': params.autoHeight
-    }, {
-      'rtl': rtl
-    }, {
-      'grid': params.grid && params.grid.rows > 1
-    }, {
-      'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column'
-    }, {
-      'android': device.android
-    }, {
-      'ios': device.ios
-    }, {
-      'css-mode': params.cssMode
-    }, {
-      'centered': params.cssMode && params.centeredSlides
-    }, {
-      'watch-progress': params.watchSlidesProgress
-    }], params.containerModifierClass);
+        'autoheight': params.autoHeight
+      }, {
+        'rtl': rtl
+      }, {
+        'grid': params.grid && params.grid.rows > 1
+      }, {
+        'grid-column': params.grid && params.grid.rows > 1 && params.grid.fill === 'column'
+      }, {
+        'android': device.android
+      }, {
+        'ios': device.ios
+      }, {
+        'css-mode': params.cssMode
+      }, {
+        'centered': params.cssMode && params.centeredSlides
+      }, {
+        'watch-progress': params.watchSlidesProgress
+      }], params.containerModifierClass);
     classNames.push(...suffixes);
     el.classList.add(...classNames);
     swiper.emitContainerClasses();
@@ -4473,7 +4474,7 @@ var Swiper = (function () {
       }
       const activeIndex = typeof forceActiveIndex === 'undefined' ? swiper.activeIndex || 0 : forceActiveIndex;
       let offsetProp;
-      if (swiper.rtlTranslate) offsetProp = 'right';else offsetProp = swiper.isHorizontal() ? 'left' : 'top';
+      if (swiper.rtlTranslate) offsetProp = 'right'; else offsetProp = swiper.isHorizontal() ? 'left' : 'top';
       let slidesPerViewNumeric;
       if (slidesPerView === 'auto') {
         if (slidesPerViewAutoSlideSize) {
@@ -4822,13 +4823,13 @@ var Swiper = (function () {
       const speed = swiper.params.keyboard.speed;
       if (swiper.isHorizontal()) {
         if (isPageUp || isPageDown || isArrowLeft || isArrowRight) {
-          if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+          if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
         }
         if ((isPageDown || isArrowRight) && !rtl || (isPageUp || isArrowLeft) && rtl) swiper.slideNext(speed);
         if ((isPageUp || isArrowLeft) && !rtl || (isPageDown || isArrowRight) && rtl) swiper.slidePrev(speed);
       } else {
         if (isPageUp || isPageDown || isArrowUp || isArrowDown) {
-          if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+          if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
         }
         if (isPageDown || isArrowDown) swiper.slideNext(speed);
         if (isPageUp || isArrowUp) swiper.slidePrev(speed);
@@ -5045,8 +5046,8 @@ var Swiper = (function () {
       const data = normalize(e);
       if (params.forceToAxis) {
         if (swiper.isHorizontal()) {
-          if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = -data.pixelX * rtlFactor;else return true;
-        } else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = -data.pixelY;else return true;
+          if (Math.abs(data.pixelX) > Math.abs(data.pixelY)) delta = -data.pixelX * rtlFactor; else return true;
+        } else if (Math.abs(data.pixelY) > Math.abs(data.pixelX)) delta = -data.pixelY; else return true;
       } else {
         delta = Math.abs(data.pixelX) > Math.abs(data.pixelY) ? -data.pixelX * rtlFactor : -data.pixelY;
       }
@@ -5202,7 +5203,7 @@ var Swiper = (function () {
           }
         }
       }
-      if (e.preventDefault) e.preventDefault();else e.returnValue = false;
+      if (e.preventDefault) e.preventDefault(); else e.returnValue = false;
       return false;
     }
     function events(method) {
@@ -5477,7 +5478,7 @@ var Swiper = (function () {
   function classesToSelector(classes = '') {
     // Escape all CSS selector special characters
     return `.${classes.trim().replace(/([\.:!+\/()[\]#>~*^$|=,'"@{}\\])/g, '\\$1') // eslint-disable-line
-  .replace(/ /g, '.')}`;
+      .replace(/ /g, '.')}`;
   }
 
   function Pagination({
@@ -6109,7 +6110,7 @@ var Swiper = (function () {
         dragEl
       } = scrollbar;
       if (!isTouched) return;
-      if (e.preventDefault && e.cancelable) e.preventDefault();else e.returnValue = false;
+      if (e.preventDefault && e.cancelable) e.preventDefault(); else e.returnValue = false;
       setDragPosition(e);
       wrapperEl.style.transitionDuration = '0ms';
       el.style.transitionDuration = '0ms';
@@ -7251,8 +7252,8 @@ var Swiper = (function () {
     }
     on('beforeInit', () => {
       if (typeof window !== 'undefined' && (
-      // eslint-disable-line
-      typeof swiper.params.controller.control === 'string' || swiper.params.controller.control instanceof HTMLElement)) {
+        // eslint-disable-line
+        typeof swiper.params.controller.control === 'string' || swiper.params.controller.control instanceof HTMLElement)) {
         const controlElements = typeof swiper.params.controller.control === 'string' ? [...document.querySelectorAll(swiper.params.controller.control)] : [swiper.params.controller.control];
         controlElements.forEach(controlElement => {
           if (!swiper.controller.control) swiper.controller.control = [];
@@ -8339,7 +8340,7 @@ var Swiper = (function () {
             } else {
               newThumbsIndex = newThumbsIndex + Math.floor(slidesPerView / 2) - 1;
             }
-          } else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1) ;
+          } else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1);
           thumbsSwiper.slideTo(newThumbsIndex, slideSpeed);
         }
       }

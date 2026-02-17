@@ -13,15 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Fonts CSS -->
     <?= link_tag('assets/css/fonts.css') ?>
+    <!-- Gunakan preload jika gambar tersebut berukuran besar -->
     <!-- Tambahkan logika preload disetiap halaman yang membutuhkannya -->
     <link rel="preload" as="image" href="<?= base_url('assets/images/backgrounds/bg-gedung-dprd-batang-hari.webp') ?>">
-    <!-- Gunakan preload jika gambar tersebut berukuran besar -->
-    <style>
-        /* .swiper,
-        .swiper * {
-            height: 100%;
-        } */
-    </style>
 </head>
 
 <body>

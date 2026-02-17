@@ -1,3 +1,4 @@
+<!-- Use class "dark:bg-slate-900 dark:text-white/85" instead class on header for Dark Mode variant -->
 <header class="lg:fixed top-0 left-0 bg-neutral-50 w-full py-4 lg:px-12 px-7 flex justify-between items-center border-b border-solid border-neutral-300 z-999999999">
     <!-- Identity Company -->
     <div class="identity flex gap-2.5">

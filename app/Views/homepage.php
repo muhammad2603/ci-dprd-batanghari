@@ -1,7 +1,10 @@
 <?= $this->extend('layouts/main_layout') ?>
 <?= $this->section('content') ?>
 <?php
+// Select Hero Slider Beranda from DB
 $heroSlider = model(App\Models\HeroSliderBeranda::class)->getDatas();
+// Select Information Services from DB
+$informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama, deskripsi_singkat, internal_link, eksternal_link, icon');
 ?>
 <!-- Slider Main Container -->
 <section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:h-[calc(100vh-82.67px)] overflow-hidden" id="swiperWrapper">
@@ -135,78 +138,19 @@ $heroSlider = model(App\Models\HeroSliderBeranda::class)->getDatas();
     <p class="text-gray-500/90 text-center">Akses cepat ke berbagai layanan DPRD Batang Hari</p>
     <!-- List Services -->
     <div class="services mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6.5 sm:gap-5.5">
-        <!-- Layanan Peraturan Daerah -->
-        <div class="service peraturan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
-            <a href="#" class="py-6 px-5 block group">
-                <div class="icon-service-wrapper w-fit p-2 bg-blue-500 border border-solid border-blue-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('document', ['class' => 'size-6 text-white']) ?>
-                </div>
-                <div class="service-details mt-2.5">
-                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500 group-active:text-blue-500">Peraturan Daerah</h3>
-                    <p class="text-base sm:text-sm mt-1 text-gray-500/90">Akses dokumen peraturan dan kebijakan daerah</p>
-                </div>
-            </a>
-        </div>
-        <!-- Layanan Profil Anggota -->
-        <div class="service profil-anggota bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
-            <a href="#" class="py-6 px-5 block group">
-                <div class="icon-service-wrapper w-fit p-2 bg-emerald-400 border border-solid border-emerald-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('users', ['class' => 'size-6 text-white']) ?>
-                </div>
-                <div class="service-details mt-2.5">
-                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Profil Anggota</h3>
-                    <p class="text-base sm:text-sm mt-1 text-gray-500/90">Informasi lengkap Anggota DPRD</p>
-                </div>
-            </a>
-        </div>
-        <!-- Layanan Jadwal Rapat -->
-        <div class="service jadwal-rapat bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
-            <a href="#" class="py-6 px-5 block group">
-                <div class="icon-service-wrapper w-fit p-2 bg-purple-500 border border-solid border-purple-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('calendar', ['class' => 'size-6 text-white']) ?>
-                </div>
-                <div class="service-details mt-2.5">
-                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Jadwal Rapat</h3>
-                    <p class="text-base sm:text-sm mt-1 text-gray-500/90">Kalender agenda dan rapat pleno</p>
-                </div>
-            </a>
-        </div>
-        <!-- Layanan Aspirasi Masyarakat -->
-        <div class="service aspirasi-masyarakat bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
-            <a href="#" class="py-6 px-5 block group">
-                <div class="icon-service-wrapper w-fit p-2 bg-orange-500 border border-solid border-orange-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('message', ['class' => 'size-6 text-white']) ?>
-                </div>
-                <div class="service-details mt-2.5">
-                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Aspirasi Masyarakat</h3>
-                    <p class="text-base sm:text-sm mt-1 text-gray-500/90">Sampaikan aspirasi dan keluhan anda</p>
-                </div>
-            </a>
-        </div>
-        <!-- Layanan Laporan Kegiatan -->
-        <div class="service laporan-kegiatan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
-            <a href="#" class="py-6 px-5 block group">
-                <div class="icon-service-wrapper w-fit p-2 bg-red-500 border border-solid border-red-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('book', ['class' => 'size-6 text-white']) ?>
-                </div>
-                <div class="service-details mt-2.5">
-                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Laporan Kegiatan</h3>
-                    <p class="text-base sm:text-sm mt-1 text-gray-500/90">Transparansi laporan dan kegiatan</p>
-                </div>
-            </a>
-        </div>
-        <!-- Layanan Informasi Publik -->
-        <div class="service informasi-publik bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
-            <a href="#" class="py-6 px-5 block group">
-                <div class="icon-service-wrapper w-fit p-2 bg-teal-500 border border-solid border-teal-700 rounded-lg transition duration-50 group-hover:scale-105">
-                    <?= icon('office', ['class' => 'size-6 text-white']) ?>
-                </div>
-                <div class="service-details mt-2.5">
-                    <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500">Informasi Publik</h3>
-                    <p class="text-base sm:text-sm mt-1 text-gray-500/90">Layanan informasi untuk publik</p>
-                </div>
-            </a>
-        </div>
+        <?php foreach ($informationServices as $service): ?>
+            <div class="service peraturan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
+                <a href="<?= esc($service["internal_link"]) ?? esc($service["eksternal_link"]) ?>" class="py-6 px-5 block group">
+                    <div class="icon-service-wrapper w-fit p-2 bg-blue-500 border border-solid border-blue-700 rounded-lg transition duration-50 group-hover:scale-105">
+                        <?= icon($service["icon"], ['class' => 'size-6 text-white']) ?>
+                    </div>
+                    <div class="service-details mt-2.5">
+                        <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500 group-active:text-blue-500"><?= esc($service["nama"]) ?></h3>
+                        <p class="text-base sm:text-sm mt-1 text-gray-500/90"><?= esc($service["deskripsi_singkat"]) ?></p>
+                    </div>
+                </a>
+            </div>
+        <?php endforeach ?>
     </div>
     <!-- Akhir List Services -->
 </section>

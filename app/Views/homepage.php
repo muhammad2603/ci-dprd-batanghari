@@ -22,6 +22,9 @@ $heroSlider = model(App\Models\HeroSliderBeranda::class)->getDatas();
                     <?php if (!is_null($slide["deskripsi_singkat"])): ?>
                         <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md"><?= esc($slide["deskripsi_singkat"]) ?></p>
                     <?php endif ?>
+                    <?php if (!is_null($slide["link"])): ?>
+                        <a href="<?= $slide["link"] ?>" class="mt-5 md:mt-10 w-fit py-2 px-3.5 sm:py-2.5 sm:px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
+                    <?php endif ?>
                 </div>
             </figure>
         <?php endforeach ?>

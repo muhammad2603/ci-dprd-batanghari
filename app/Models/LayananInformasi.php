@@ -12,10 +12,13 @@ class LayananInformasi extends Model
     protected $primaryKey = 'id';
 
     // @methods
+    // Fetch data layanan & informasi
     public function getDatas(string $table_selected = '*'): array
     {
+        // @return
         return $this->builder()
             ->select($table_selected)
+            ->orderBy('id', 'ASC')
             ->get()
             ->getResultArray();
     }

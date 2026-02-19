@@ -4,7 +4,7 @@
 // Select Hero Slider Beranda from DB
 $heroSlider = model(App\Models\HeroSliderBeranda::class)->getDatas();
 // Select Information Services from DB
-$informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama, deskripsi_singkat, internal_link, eksternal_link, icon');
+$informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama, deskripsi_singkat, internal_link, eksternal_link, icon, warna');
 ?>
 <!-- Slider Main Container -->
 <section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:h-[calc(100vh-82.67px)] overflow-hidden" id="swiperWrapper">
@@ -141,7 +141,7 @@ $informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama
         <?php foreach ($informationServices as $service): ?>
             <div class="service peraturan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
                 <a href="<?= esc($service["internal_link"]) ?? esc($service["eksternal_link"]) ?>" class="py-6 px-5 block group">
-                    <div class="icon-service-wrapper w-fit p-2 bg-blue-500 border border-solid border-blue-700 rounded-lg transition duration-50 group-hover:scale-105">
+                    <div class="<?= $service["warna"] ?> icon-service-wrapper w-fit p-2 border border-solid rounded-lg transition duration-50 group-hover:scale-105">
                         <?= icon($service["icon"], ['class' => 'size-6 text-white']) ?>
                     </div>
                     <div class="service-details mt-2.5">

@@ -141,7 +141,7 @@ $informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama
         <?php foreach ($informationServices as $service): ?>
             <div class="service peraturan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
                 <a href="<?= esc($service["internal_link"]) ?? esc($service["eksternal_link"]) ?>" class="py-6 px-5 block group">
-                    <div class="<?= $service["warna"] ?> icon-service-wrapper w-fit p-2 border border-solid rounded-lg transition duration-50 group-hover:scale-105">
+                    <div class="<?= esc($service["warna"]) ?> icon-service-wrapper w-fit p-2 border border-solid rounded-lg transition duration-50 group-hover:scale-105">
                         <?= icon($service["icon"], ['class' => 'size-6 text-white']) ?>
                     </div>
                     <div class="service-details mt-2.5">

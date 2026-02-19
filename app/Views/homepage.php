@@ -1,40 +1,30 @@
 <?= $this->extend('layouts/main_layout') ?>
 <?= $this->section('content') ?>
+<?php
+$heroSlider = model(App\Models\HeroSliderBeranda::class)->getDatas();
+?>
 <!-- Slider Main Container -->
-<section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:min-h-screen lg:h-screen aspect-video md:aspect-auto overflow-hidden" id="swiperWrapper">
+<section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:h-[calc(100vh-82.67px)] overflow-hidden" id="swiperWrapper">
     <!-- @SwiperJS -->
     <div class="swiper-wrapper">
         <!-- Slides -->
-        <figure class="h-full swiper-slide invisible">
-            <img src="https://www.mediainvestigasi.net/wp-content/uploads/2024/09/IMG-20240901-WA0024.jpg" alt="" class="w-full h-screen object-cover aspect-video brightness-35 overflow-hidden" loading="lazy">
-            <div class="swiper-lazy-preloader"></div>
-            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[50%] lg:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
-                <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
-                <h2 class="mt-4 lg:mt-3.5 text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-13 xl:leading-15 text-shadow-md">Pelantikan Anggota DPRD Periode 2024-2029</h2>
-                <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">Pelantikan Anggota DPRD yang baru dengan komitmen melayani masyarakat dengan dedikasi tinggi</p>
-                <a href="#" class="mt-5 md:mt-10 w-fit py-2 px-3.5 sm:py-2.5 sm:px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
-            </div>
-        </figure>
-        <figure class="h-full swiper-slide">
-            <img src="https://cdn.antaranews.com/cache/1200x800/2025/04/29/IMG-20250429-WA0003_2.jpg" alt="" class="w-full h-screen object-cover aspect-video brightness-35 overflow-hidden" loading="lazy">
-            <div class="swiper-lazy-preloader"></div>
-            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[50%] lg:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
-                <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
-                <h2 class="mt-4 lg:mt-3.5 text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-13 xl:leading-15 text-shadow-md">DPRD Batanghari Gelar Rapat Paripurna...</h2>
-                <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">LKPJ Akhir Tahun Anggaran wajib disampaikan kepada DPRD paling lambat tiga bulan setelah tahun anggaran berakhir. Setelah LKPJ ini disampaikan, DPRD akan membentuk tim khusus untuk membahas laporan tersebut sebelum mencapai kesepakatan</p>
-                <a href="#" class="mt-5 md:mt-10 w-fit py-2 px-3.5 sm:py-2.5 sm:px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
-            </div>
-        </figure>
-        <figure class="h-full swiper-slide invisible">
-            <img src="https://jambiekspres.disway.id/upload/b1252dfe2022c93c8e660d3504498fda.jpg" alt="" class="w-full h-screen object-cover aspect-video brightness-35 overflow-hidden" loading="lazy">
-            <div class="swiper-lazy-preloader"></div>
-            <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[48%] md:top-[50%] lg:top-[55%] left-7 sm:left-16 md:left-24 -translate-y-[50%] text-white text-pretty">
-                <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300">Rapat</span>
-                <h2 class="mt-4 lg:mt-3.5 text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-13 xl:leading-15 text-shadow-md">DPRD Kabupaten Batang Hari Sampaikan Ucapan...</h2>
-                <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md">Ketua DPRD Kabupaten Batanghari, Rahmad Hasrofi, SE, bersama Wakil Ketua DPRD Hj. Elfirsto Nopsiami AR, S.H dan Muhammad Firdaus, menyampaikan harapan agar pers terus menjalankan fungsi kontrol sosial secara profesional, berimbang, dan bertanggung jawab.</p>
-                <a href="#" class="mt-5 md:mt-10 w-fit py-2 px-3.5 sm:py-2.5 sm:px-3 flex items-center gap-1.5 bg-blue-600 font-regular text-sm group rounded-md">Baca Selengkapnya <?= icon('arrow-right-mini') ?></a>
-            </div>
-        </figure>
+        <?php foreach ($heroSlider as $slide): ?>
+            <figure class="h-full swiper-slide invisible">
+                <img src="<?= esc($slide["img"]) ?>" alt="Gambar <?= $slide["judul"] ?? $slide["badge"] ?>" class="w-full h-full object-cover aspect-video <?= !is_null($slide["judul"]) ? "brightness-35" : "" ?> overflow-hidden" loading="lazy">
+                <div class="swiper-lazy-preloader"></div>
+                <div class="slider-informations w-[80%] sm:w-[66%] md:w-[50%] 2xl:w-[65%] absolute top-[50%] left-24 -translate-y-[50%] text-white text-pretty">
+                    <?php if (!is_null($slide["badge"]) && !is_null($slide["judul"])): ?>
+                        <span class="type-berita py-1 px-5 bg-blue-600 font-regular font-semibold text-sm tracking-wide rounded-full inset-shadow-xs inset-shadow-blue-300"><?= esc($slide["badge"]) ?></span>
+                    <?php endif ?>
+                    <?php if (!is_null($slide["judul"])): ?>
+                        <h2 class="mt-4 lg:mt-3.5 text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl lg:leading-13 xl:leading-15 text-shadow-md"><?= esc($slide["judul"]) ?></h2>
+                    <?php endif ?>
+                    <?php if (!is_null($slide["deskripsi_singkat"])): ?>
+                        <p class="sm:mt-3 md:mt-5 hidden sm:block text-sm md:text-lg xl:text-base 2xl:text-lg leading-5.5 2xl:leading-6 text-shadow-md"><?= esc($slide["deskripsi_singkat"]) ?></p>
+                    <?php endif ?>
+                </div>
+            </figure>
+        <?php endforeach ?>
     </div>
     <!-- If we need pagination -->
     <div class="swiper-pagination"></div>
@@ -76,16 +66,14 @@
     </div>
 </section>
 <!-- Akhir Section About -->
-
+<!-- Section Pimpinan -->
 <section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-white">
     <h2 class="relative mb-8 text-3xl text-center after:absolute after:-bottom-4 after:left-[50%] after:-translate-[50%] after:w-[10%] after:h-1 after:bg-blue-500 after:rounded-full">Pimpinan DPRD</h2>
     <p class="text-gray-500/90 text-center">
         Ketua dan Wakil Ketua DPRD Kabupaten Batang Hari
     </p>
-
     <!-- Cards -->
     <div class="leaders-card mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch">
-
         <!-- Wakil Ketua I -->
         <div class="bg-white rounded-2xl shadow-md transition-shadow p-6 text-center xl:scale-90 order-2 lg:order-1">
             <figure class="w-75 md:w-62.5 aspect-square mx-auto rounded-xl overflow-hidden mb-4 lg:scale-90 xl:scale-100">
@@ -94,7 +82,6 @@
                     alt="Wakil Ketua I DPRD Batang Hari"
                     loading="lazy">
             </figure>
-
             <h3 class="font-title font-semibold text-lg text-gray-800">
                 Hj. El Firsta Nopsiamti AR, S.H.
             </h3>
@@ -102,7 +89,6 @@
                 Wakil Ketua I
             </p>
         </div>
-
         <!-- Ketua (highlight) -->
         <div class="bg-white rounded-2xl shadow-md ring-2 ring-blue-600/40 p-6 text-center md:col-span-2 lg:col-span-1 order-1 lg:order-2">
             <figure class="w-75 lg:w-full xl:w-75 aspect-square mx-auto rounded-xl overflow-hidden mb-4 lg:scale-105 xl:scale-100">
@@ -119,7 +105,6 @@
                 Ketua DPRD
             </p>
         </div>
-
         <!-- Wakil Ketua II -->
         <div class="bg-white rounded-2xl shadow-md transition-shadow p-6 text-center xl:scale-90 order-3">
             <figure class="w-75 md:w-62.5 aspect-square mx-auto rounded-xl overflow-hidden mb-4 lg:scale-90 xl:scale-100">
@@ -136,10 +121,9 @@
                 Wakil Ketua II
             </p>
         </div>
-
     </div>
 </section>
-
+<!-- Akhir Section Pimpinan -->
 <!-- Section Services Information -->
 <section class="services-information mt-5 py-24 lg:px-12 px-7 bg-gray-100/90">
     <!-- Title Section -->

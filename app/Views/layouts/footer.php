@@ -1,7 +1,12 @@
 <?php
+// helper array
 helper('array');
-
+// select main meta from database
 ["identitas_instansi" => $identitas, "kontak" => $kontak, "media_sosial" => $media_sosial] = json_decode((model(App\Models\Meta::class)->getDatas('main'))[0]["meta"], true);
+// select footer navigation
+$navigation_footer = array_group_by(model(App\Models\NavigasiFooter::class)->getDatas(), ['nama_kolom']);
+// select meta links privacy policy, term & condition, and sitemap
+$more_links_footer = model(App\Models\MetaLinks::class)->getDatas(["Kebijakan Privasi", "Syarat & Ketentuan", "Sitemap"]);
 ?>
 <footer class="py-8 px-7 bg-slate-900">
     <!-- Footer Details -->
@@ -24,26 +29,16 @@ helper('array');
                 <p class="text-pretty tracking-wide"><?= $identitas["motto_footer"] ?></p>
             </div>
         </div>
-        <div class="fast-link">
-            <span class="font-title text-lg sm:text-base md:text-sm text-white">Tautan Cepat</span>
-            <nav class="mt-3 flex flex-col gap-1.5 md:text-xs text-white/75">
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Profil</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Anggota</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Peraturan Daerah</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Agenda Rapat</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Laporan Kegiatan</a>
-            </nav>
-        </div>
-        <div class="footer-services">
-            <span class="font-title text-lg sm:text-base md:text-sm text-white">Layanan</span>
-            <nav class="mt-3 flex flex-col gap-1.5 md:text-xs text-white/75">
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Aspirasi Masyarakat</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Informasi Publik</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Pengaduan</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">Transparansi</a>
-                <a href="#" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400">FAQ</a>
-            </nav>
-        </div>
+        <?php foreach ($navigation_footer as $key => $nav): ?>
+            <div class="<?= url_title($key, '-', true) ?>">
+                <span class="font-title text-lg sm:text-base md:text-sm text-white"><?= $key ?></span>
+                <nav class="mt-3 flex flex-col gap-1.5 md:text-xs text-white/75">
+                    <?php foreach ($nav as $n): ?>
+                        <a href="<?= $n["slug"] ?>" class="w-fit transition duration-100 hover:text-blue-400 active:text-blue-400"><?= $n["navigasi"] ?></a>
+                    <?php endforeach ?>
+                </nav>
+            </div>
+        <?php endforeach ?>
         <div class="footer-contacts">
             <span class="font-title text-lg sm:text-base md:text-sm text-white">Kontak</span>
             <div class="my-5 md:my-3 flex flex-col gap-2.5 md:text-xs text-white/75">
@@ -72,9 +67,9 @@ helper('array');
             <span>Dikembangkan oleh IT <?= $identitas["slug_instansi"] ?>.</span>
         </div>
         <div class="mt-8 sm:mt-3 md:mt-0 flex gap-7">
-            <a href="#" class="font-regular transition duration-100 hover:text-blue-400 active:text-blue-400">Kebijakan Privasi</a>
-            <a href="#" class="font-regular transition duration-100 hover:text-blue-400 active:text-blue-400">Syarat & Ketentuan</a>
-            <a href="#" class="font-regular transition duration-100 hover:text-blue-400 active:text-blue-400">Sitemap</a>
+            <?php foreach ($more_links_footer as $link): ?>
+                <a href="<?= $link["slug"] ?>" class="font-regular transition duration-100 hover:text-blue-400 active:text-blue-400"><?= $link["name"] ?></a>
+            <?php endforeach ?>
         </div>
     </div>
     <!-- Akhir Footer Details -->

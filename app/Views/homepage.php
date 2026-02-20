@@ -7,6 +7,8 @@ $heroSlider = model(App\Models\HeroSliderBeranda::class)->getDatas();
 $informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama, deskripsi_singkat, internal_link, eksternal_link, icon, warna');
 // Select Berita from DB
 $news = model(App\Models\Berita::class)->getDatas();
+// Select meta_pages for homepage (beranda)
+["bg_img" => $bg_img, "motto" => $motto, "title" => $title, "deskripsi" => $deskripsi] = json_decode((model(App\Models\MetaPages::class)->getDatas())[0]["meta"], true)["about_section"];
 ?>
 <!-- Slider Main Container -->
 <section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:h-[calc(100vh-82.67px)] overflow-hidden" id="swiperWrapper">
@@ -50,15 +52,15 @@ $news = model(App\Models\Berita::class)->getDatas();
 </section>
 <!-- Akhir Slider Main Container -->
 <!-- Section About -->
-<section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-[url('assets/images/backgrounds/bg-gedung-dprd-batang-hari.webp')] bg-no-repeat bg-cover">
+<section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-[url(<?= $bg_img ?>)] bg-no-repeat bg-cover">
     <!-- Layer Text -->
     <div class="layer-text w-full sm:w-2/3 2xl:w-[80%] text-white">
         <!-- Slogan -->
-        <span class="font-regular py-1 px-3 bg-blue-200/60 font-semibold text-sm md:text-sm text-shadow-sm tracking-wider rounded-full mix-blend-lighten">Melayani dengan Integritas dan Transparansi</span>
+        <span class="font-regular py-1 px-3 bg-blue-200/60 font-semibold text-sm md:text-sm text-shadow-sm tracking-wider rounded-full mix-blend-lighten"><?= $motto ?></span>
         <!-- Company Name -->
-        <h2 class="my-4 md:my-6 lg:my-5 text-4xl lg:text-5xl xl:text-6xl tracking-wider lg:leading-14 xl:leading-17 text-shadow-lg uppercase">Dewan Perwakilan Rakyat Daerah</h2>
+        <h2 class="my-4 md:my-6 lg:my-5 text-4xl lg:text-5xl xl:text-6xl tracking-wider lg:leading-14 xl:leading-17 text-shadow-lg uppercase"><?= $title ?></h2>
         <!-- Paragraph About Company -->
-        <p class="text-shadow-lg text-lg sm:text-base xl:text-lg">Menyuarakan aspirasi rakyat, mengawasi pemerintahan daerah, dan membuat regulasi untuk kesejahteraan masyarakat.</p>
+        <p class="text-shadow-lg text-lg sm:text-base xl:text-lg"><?= $deskripsi ?></p>
         <!-- Links -->
         <div class="links mt-5 flex gap-4.5 sm:gap-4">
             <!-- Link Public Service -->

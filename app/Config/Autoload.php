@@ -88,5 +88,5 @@ class Autoload extends AutoloadConfig
      *
      * @var list<string>
      */
-    public $helpers = ['icon', 'time_difference'];
+    public $helpers = ['icon', 'time_difference', 'html_purifier'];
 }

@@ -9,6 +9,8 @@ $informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama
 $news = model(App\Models\Berita::class)->getDatas();
 // Select meta_pages for homepage (beranda)
 ["bg_img" => $bg_img, "motto" => $motto, "title" => $title, "deskripsi" => $deskripsi] = json_decode((model(App\Models\MetaPages::class)->getDatas())[0]["meta"], true)["about_section"];
+// Select meta_links
+[$meta_link_public_service, $meta_link_about_us, $meta_link_news] = model(App\Models\MetaLinks::class)->getDatas(["Layanan Publik", "Tentang Kami", "Berita"]);
 ?>
 <!-- Slider Main Container -->
 <section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:h-[calc(100vh-82.67px)] overflow-hidden" id="swiperWrapper">
@@ -52,26 +54,26 @@ $news = model(App\Models\Berita::class)->getDatas();
 </section>
 <!-- Akhir Slider Main Container -->
 <!-- Section About -->
-<section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-[url(<?= $bg_img ?>)] bg-no-repeat bg-cover">
+<section class="w-full py-18 sm:py-24 lg:py-38 lg:px-12 px-7 bg-[url(<?= esc($bg_img) ?>)] bg-no-repeat bg-cover">
     <!-- Layer Text -->
     <div class="layer-text w-full sm:w-2/3 2xl:w-[80%] text-white">
         <!-- Slogan -->
-        <span class="font-regular py-1 px-3 bg-blue-200/60 font-semibold text-sm md:text-sm text-shadow-sm tracking-wider rounded-full mix-blend-lighten"><?= $motto ?></span>
+        <span class="font-regular py-1 px-3 bg-blue-200/60 font-semibold text-sm md:text-sm text-shadow-sm tracking-wider rounded-full mix-blend-lighten"><?= esc($motto) ?></span>
         <!-- Company Name -->
-        <h2 class="my-4 md:my-6 lg:my-5 text-4xl lg:text-5xl xl:text-6xl tracking-wider lg:leading-14 xl:leading-17 text-shadow-lg uppercase"><?= $title ?></h2>
+        <h2 class="my-4 md:my-6 lg:my-5 text-4xl lg:text-5xl xl:text-6xl tracking-wider lg:leading-14 xl:leading-17 text-shadow-lg uppercase"><?= esc($title) ?></h2>
         <!-- Paragraph About Company -->
-        <p class="text-shadow-lg text-lg sm:text-base xl:text-lg"><?= $deskripsi ?></p>
+        <p class="text-shadow-lg text-lg sm:text-base xl:text-lg"><?= esc($deskripsi) ?></p>
         <!-- Links -->
         <div class="links mt-5 flex gap-4.5 sm:gap-4">
             <!-- Link Public Service -->
-            <a href="#" class="py-2 md:py-2.5 px-3.5 md:px-4 flex gap-2 items-center bg-white text-base text-blue-500 transition duration-150 ease-in hover:bg-blue-500 hover:text-white rounded-lg">
-                <span>Layanan Publik</span>
+            <a href="<?= esc($meta_link_public_service["slug"]) ?>" class="py-2 md:py-2.5 px-3.5 md:px-4 flex gap-2 items-center bg-white text-base text-blue-500 transition duration-150 ease-in hover:bg-blue-500 hover:text-white rounded-lg">
+                <span><?= esc($meta_link_public_service["name"]) ?></span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4 align-middle">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
                 </svg>
             </a>
             <!-- Link for All Details About Company -->
-            <a href="#" class="py-2 md:py-2.5 px-3.5 md:px-4 bg-gray-100/20 text-base border border-solid border-white/50 rounded-lg backdrop-blur-xs transition duration-150 hover:bg-gray-100/40 hover:backdrop-blur-md">Tentang Kami</a>
+            <a href="<?= esc($meta_link_about_us["slug"]) ?>" class="py-2 md:py-2.5 px-3.5 md:px-4 bg-gray-100/20 text-base border border-solid border-white/50 rounded-lg backdrop-blur-xs transition duration-150 hover:bg-gray-100/40 hover:backdrop-blur-md"><?= esc($meta_link_about_us["name"]) ?></a>
         </div>
     </div>
 </section>
@@ -215,7 +217,7 @@ $news = model(App\Models\Berita::class)->getDatas();
             <p class="text-gray-500/90">Informasi terbaru seputar kegiatan DPRD</p>
         </div>
         <!-- Link Section -->
-        <a href="#" class="py-2 sm:py-1.5 px-3 flex items-center gap-1.5 self-end sm:self-center font-regular sm:text-sm text-blue-600 rounded-lg hover:bg-blue-100 active:bg-blue-100 group">Lihat Semua <?= icon('arrow-right-mini') ?></a>
+        <a href="<?= esc($meta_link_news["slug"]) ?>" class="py-2 sm:py-1.5 px-3 flex items-center gap-1.5 self-end sm:self-center font-regular sm:text-sm text-blue-600 rounded-lg hover:bg-blue-100 active:bg-blue-100 group">Lihat Semua <?= icon('arrow-right-mini') ?></a>
     </div>
     <!-- Akhir Header Section -->
     <!-- List Berita -->

@@ -8,7 +8,7 @@ $informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama
 // Select Berita from DB
 $news = model(App\Models\Berita::class)->getDatas();
 // Select meta_pages for homepage (beranda)
-["bg_img" => $bg_img, "motto" => $motto, "title" => $title, "deskripsi" => $deskripsi] = json_decode((model(App\Models\MetaPages::class)->getDatas())[0]["meta"], true)["about_section"];
+["bg_img" => $bg_img, "motto" => $motto, "title" => $title, "deskripsi" => $deskripsi] = json_decode((model(App\Models\Meta::class)->getDatas())[0]["meta"], true)["about_section"];
 // Select meta_links
 [$meta_link_public_service, $meta_link_about_us, $meta_link_news] = model(App\Models\MetaLinks::class)->getDatas(["Layanan Publik", "Tentang Kami", "Berita"]);
 // Select sambutan_sekretaris

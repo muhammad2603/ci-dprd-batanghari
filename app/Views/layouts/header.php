@@ -1,16 +1,11 @@
 <?php
-// Fetching link navigasi using Model LinkNavigation
-$linkNavResult = model(App\Models\LinkNavigation::class)->getDatas();
-// @mapping: Mapping navigation, then change value on key child_name and child_slug to array 
-$linkNavResult = array_map(function ($item) {
-    // @loop: Looping key on array
-    foreach (["child_name", "child_slug"] as $key) {
-        // Change string to array with separator comma
-        $item[$key] = explode(',', $item[$key]);
-    }
-    // @return new value
-    return $item;
-}, $linkNavResult);
+
+helper('array');
+
+// Select navigasi on header
+$headerNav = model(App\Models\HeaderNavigation::class)->getDatas();
+
+$navDropdown = array_group_by(model(App\Models\DropdownNavigation::class)->getDatas(), ["parent_nav"]);
 ?>
 <!-- Use class "dark:bg-slate-900 dark:text-white/85" instead class on header for Dark Mode variant -->
 <header class="top-0 left-0 bg-neutral-50 w-full py-4 px-7 lg:px-12 flex justify-between items-center border-b border-solid border-neutral-300 z-999999999">
@@ -34,12 +29,10 @@ $linkNavResult = array_map(function ($item) {
     <!-- Navigasi -->
     <nav class="relative hidden lg:flex lg:gap-5 xl:gap-8 text-gray-500/90">
         <!-- @loop: Looping Navigation -->
-        <?php foreach ($linkNavResult as $link): ?>
+        <?php foreach ($headerNav as $nav): ?>
             <?php
-            $parentName = $link['parent_name'];
-            $parentSlug = $link['parent_slug'];
-            $childName = $link['child_name'];
-            $childSlug = $link['child_slug'];
+            $parentName = $nav['parent_nav'];
+            $parentSlug = $nav['slug'];
             ?>
             <?php if ($parentSlug !== null): ?>
                 <a href="<?= base_url($parentSlug) ?>" class="<?= ($parentName === $title) ? 'font-semibold text-blue-500' : 'hover:text-blue-500' ?> focus:outline-0"><?= esc($parentName) ?></a>
@@ -53,10 +46,13 @@ $linkNavResult = array_map(function ($item) {
                         </svg>
                     </a>
                     <!-- Dropdown Navigation -->
-                    <div class="nav-dropdown absolute left-0 top-[130%] w-60 py-1.5 hidden flex-col bg-neutral-50 text-sm rounded-lg shadow-sm shadow-neutral-300">
-                        <?php for ($i = 0; $i < count($childName); $i++): ?>
-                            <a href="<?= esc($childSlug[$i]) ?>" class="py-2 px-4 hover:bg-blue-100 hover:text-blue-400 focus:outline-0"><?= esc($childName[$i]) ?></a>
-                        <?php endfor; ?>
+                    <div class="nav-dropdown absolute left-0 top-[130%] w-60 py-1.5 hidden flex-col bg-neutral-50 text-sm rounded-lg shadow-sm shadow-neutral-300 z-999999999">
+                        <?php foreach ($navDropdown[$parentName] as $dropdown): ?>
+                            <?php
+                            ["child_nav" => $child_nav, "slug" => $slug] = $dropdown;
+                            ?>
+                            <a href="<?= esc($slug) ?>" class="py-2 px-4 hover:bg-blue-100 hover:text-blue-400 focus:outline-0"><?= esc($child_nav) ?></a>
+                        <?php endforeach ?>
                     </div>
                 </div>
             <?php endif; ?>

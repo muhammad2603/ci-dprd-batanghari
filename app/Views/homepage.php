@@ -11,6 +11,8 @@ $news = model(App\Models\Berita::class)->getDatas();
 ["bg_img" => $bg_img, "motto" => $motto, "title" => $title, "deskripsi" => $deskripsi] = json_decode((model(App\Models\MetaPages::class)->getDatas())[0]["meta"], true)["about_section"];
 // Select meta_links
 [$meta_link_public_service, $meta_link_about_us, $meta_link_news] = model(App\Models\MetaLinks::class)->getDatas(["Layanan Publik", "Tentang Kami", "Berita"]);
+// Select sambutan_sekretaris
+$sambutan_sekretaris = (model(App\Models\SambutanSekretaris::class)->getDatas())[0]["sambutan"];
 ?>
 <!-- Slider Main Container -->
 <section class="swiper w-full min-h-87 h-87 sm:min-h-82.5 sm:h-82.5 md:h-120 lg:h-[calc(100vh-82.67px)] overflow-hidden" id="swiperWrapper">
@@ -183,16 +185,8 @@ $news = model(App\Models\Berita::class)->getDatas();
         <div class="text-sambutan-wrapper">
             <!-- Ikon Block Quotes -->
             <?= icon('block-quotes', ["class" => 'size-8 relative -top-[18px] text-blue-200']) ?>
-            <!-- Text -->
-            <blockquote class="text mb-6 text-lg sm:text-base md:text-sm md:text-left text-gray-500/90 sm:leading-6 flex flex-col gap-2.5 text-pretty">
-                <p>Assalamu&#8217;alaikum Warahmatullahi Wabarakatuh,<br>Salam sejahtera bagi kita semua.</p>
-                <p>Puji dan syukur kita panjatkan ke hadirat Allah SWT, Tuhan Yang Maha Esa, atas rahmat dan karunia-Nya sehingga kita semua senantiasa diberikan kesehatan dan kesempatan untuk terus berkarya serta mengabdi kepada masyarakat.</p>
-                <p>Sekretariat DPRD Kabupaten Batang Hari memiliki komitmen untuk memberikan dukungan administratif dan teknis secara profesional dalam menunjang pelaksanaan tugas dan fungsi DPRD, baik dalam bidang legislasi, anggaran, maupun pengawasan. Kami terus berupaya meningkatkan kualitas pelayanan, transparansi, serta akuntabilitas kinerja sebagai bentuk tanggung jawab kepada masyarakat.</p>
-                <p>Melalui berbagai inovasi dan pengembangan sistem, termasuk pemanfaatan teknologi informasi, kami berharap dapat menghadirkan pelayanan yang lebih efektif, efisien, dan responsif terhadap kebutuhan publik. Kami menyadari bahwa pelayanan yang baik tidak hanya diukur dari hasil, tetapi juga dari proses yang terbuka dan berintegritas.</p>
-                <p>Semoga upaya yang kita lakukan bersama dapat memberikan kontribusi nyata bagi kemajuan Kabupaten Batang Hari serta meningkatkan kepercayaan masyarakat terhadap lembaga legislatif.</p>
-                <p>Terima kasih atas perhatian dan kerja sama semua pihak.</p>
-                <p class="text-black font-semibold">Wassalamu&#8217;alaikum Warahmatullahi Wabarakatuh.</p>
-            </blockquote>
+            <!-- Sambutan Sekretaris -->
+            <?= $sambutan_sekretaris ?>
             <!-- Barrier -->
             <hr class="text-neutral-300">
             <!-- Secretary About -->

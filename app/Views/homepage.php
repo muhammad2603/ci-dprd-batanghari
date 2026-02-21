@@ -11,6 +11,11 @@ $news = model(App\Models\Berita::class)->getDatas();
 ["bg_img" => $bg_img, "motto" => $motto, "title" => $title, "deskripsi" => $deskripsi] = json_decode((model(App\Models\Meta::class)->getDatas())[0]["meta"], true)["about_section"];
 // Select meta_links
 [$meta_link_public_service, $meta_link_about_us, $meta_link_news] = model(App\Models\MetaLinks::class)->getDatas(["Layanan Publik", "Tentang Kami", "Berita"]);
+// ambil data sekwan dengan field tertentu
+$data_sekwan = model(App\Models\DataPegawai::class)->getDatas([
+    "pegawai" => ["nama"],
+    "jabatan"
+])[0];
 // Select sambutan_sekretaris
 $sambutan_sekretaris = (model(App\Models\SambutanSekretaris::class)->getDatas())[0]["sambutan"];
 ?>
@@ -176,9 +181,9 @@ $sambutan_sekretaris = (model(App\Models\SambutanSekretaris::class)->getDatas())
             <!-- Figcaption Image -->
             <div class="caption-img absolute bottom-0 w-full pt-12 pb-4 px-4 font-regular text-center bg-linear-[to_bottom,transparent_15%,rgba(0,0,0,.70)_80%,rgba(0,0,0,.95)]">
                 <!-- Secretary Name -->
-                <figcaption class="font-semibold text-white tracking-wider text-2xl sm:text-lg">Muhammad Ali, S.E.</figcaption>
+                <figcaption class="font-semibold text-white tracking-wider text-2xl sm:text-lg"><?= $data_sekwan["nama"] ?></figcaption>
                 <!-- Job Title -->
-                <span class="mt-0.5 block text-lg sm:text-sm text-blue-300 text-shadow-md text-shadow-blue-200/15 tracking-wide">Sekretaris DPRD</span>
+                <span class="mt-0.5 block text-lg sm:text-sm text-blue-300 text-shadow-md text-shadow-blue-200/15 tracking-wide"><?= $data_sekwan["jabatan"] ?></span>
             </div>
         </figure>
         <!-- Text Wrapper -->
@@ -192,9 +197,9 @@ $sambutan_sekretaris = (model(App\Models\SambutanSekretaris::class)->getDatas())
             <!-- Secretary About -->
             <div class="names mt-4 flex flex-col items-end font-regular">
                 <!-- Name -->
-                <span class="text-lg font-semibold">Muhammad Ali, S.E.</span>
+                <span class="text-lg font-semibold"><?= $data_sekwan["nama"] ?></span>
                 <!-- Job Title -->
-                <span class="text-base sm:text-sm">Sekretaris DPRD Batang Hari</span>
+                <span class="text-base sm:text-sm"><?= $data_sekwan["jabatan"] ?> Batang Hari</span>
             </div>
         </div>
     </div>

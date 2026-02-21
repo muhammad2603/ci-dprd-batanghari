@@ -3,8 +3,8 @@
 <?php
 // Select Hero Slider Beranda from DB
 $heroSlider = model(App\Models\HeroSliderBeranda::class)->getDatas();
-// Select Information Services from DB
-$informationServices = model(App\Models\LayananInformasi::class)->getDatas('nama, deskripsi_singkat, internal_link, eksternal_link, icon, warna');
+// Select Information & Services from DB
+$informationServices = model(App\Models\LayananInformasi::class)->getDatas();
 // Select Berita from DB
 $news = model(App\Models\Berita::class)->getDatas();
 // Select meta_pages for homepage (beranda)
@@ -148,12 +148,12 @@ $sambutan_sekretaris = (model(App\Models\SambutanSekretaris::class)->getDatas())
     <div class="services mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6.5 sm:gap-5.5">
         <?php foreach ($informationServices as $service): ?>
             <div class="service peraturan bg-white rounded-xl shadow-sm transition duration-100 hover:shadow-md">
-                <a href="<?= esc($service["internal_link"]) ?? esc($service["eksternal_link"]) ?>" class="py-6 px-5 block group">
+                <a href="<?= esc($service["slug"]) ?>" class="py-6 px-5 block group">
                     <div class="<?= esc($service["warna"]) ?> icon-service-wrapper w-fit p-2 border border-solid rounded-lg transition duration-50 group-hover:scale-105">
                         <?= icon($service["icon"], ['class' => 'size-6 text-white']) ?>
                     </div>
                     <div class="service-details mt-2.5">
-                        <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500 group-active:text-blue-500"><?= esc($service["nama"]) ?></h3>
+                        <h3 class="text-lg sm:text-base transition duration-150 ease-in group-hover:text-blue-500 group-active:text-blue-500"><?= esc($service["name"]) ?></h3>
                         <p class="text-base sm:text-sm mt-1 text-gray-500/90"><?= esc($service["deskripsi_singkat"]) ?></p>
                     </div>
                 </a>

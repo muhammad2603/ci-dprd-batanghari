@@ -12,41 +12,63 @@ class DataPegawai extends Model
     protected $primaryKey = 'id';
 
     // @methods
-    // Fetch data
+    /**
+     * Mengambil data pegawai
+     * 
+     * @param array|null $field_selected: Pilih field yang ingin diambil didalam tabel.
+     * 
+     * @param array{
+     *  pegawai?: list<'nama'|'nip'|'nipppk'>,
+     *  jenis_kelamin?,
+     *  asn?,
+     *  pangkat_asn?,
+     *  golongan_asn?,
+     *  jabatan?
+     * }|null $fields_selected
+     * 
+     * @return array
+     */
     public function getDatas(array|null $fields_selected = null): array
     {
+        // struktur field untuk membuat map [table => field|field_list]
         $fields_structures = [
             "pegawai" => [
                 "nama" => "p.nama",
                 "nip" => "p.nip",
-                "nipppk" => "p.nipppk",
+                "nipppk" => "p.nipppk"
             ],
             "jenis_kelamin" => "jk.kelamin",
             "asn" => "asn.nama AS asn",
             "pangkat_asn" => "pa.nama AS pangkat",
             "golongan_asn" => "gol.nama AS golongan",
-            "jabatan" => "jbt.nama AS jabatan",
+            "jabatan" => "jbt.nama AS jabatan"
         ];
-
-        $results = $fields_selected === null ? 'p.nama, p.nip, p.nipppk, jk.kelamin, asn.nama AS asn, pa.nama AS pangkat, gol.nama AS golongan, jbt.nama AS jabatan' : implode(', ', array_reduce(
-            array_keys($fields_selected),
-            function ($carry, $table) use ($fields_selected, $fields_structures) {
-
-                $field = $fields_selected[$table];
-
-                if (is_array($field)) {
-                    foreach ($field as $name => $select) {
-                        if ($select) $carry[] = $fields_structures[$table][$name];
+        // variabel results untuk menghasilkan field yang dipilih
+        $results = $fields_selected === null ? 'p.nama, p.nip, p.nipppk, jk.kelamin, asn.nama AS asn, pa.nama AS pangkat, gol.nama AS golongan, jbt.nama AS jabatan'
+            : implode(', ', array_reduce( // reduce array_keys
+                // array_keys mengembalikan ["pegawai", "jabatan"]
+                array_keys($fields_selected),
+                // callback
+                function ($carry, $table) use ($fields_selected, $fields_structures) {
+                    // ambil field dari $fields_selected (array) menggunakan array-key $table
+                    $field = $fields_selected[$table];
+                    // cek kembali apakah value field itu merupakan array, jika array:
+                    if (is_array($field)) {
+                        // mapping list-nya dan simpan item-nya ke $name
+                        foreach ($field as $name) {
+                            // ambil field column (SQL) yang telah dibuat divariabel $fields_structures (array assoc) berdasarkan key, dan simpan kedalam $carry (array)
+                            $carry[] = $fields_structures[$table][$name];
+                        }
+                    } else { // jika value field bukan array:
+                        // ambil field column (SQL) yang telah dibuat divariabel $fields_structures (array assoc) berdasarkan key, dan simpan kedalam $carry (array)
+                        $carry[] = $fields_structures[$field];
                     }
-                } else {
-                    if ($field) $carry[] = $fields_structures[$table];
-                }
-
-                return $carry;
-            },
-            []
-        ));
-
+                    // return carry yang telah diisi
+                    return $carry;
+                },
+                // inisialisasi nilai awal pada array_reduce
+                []
+            ));
         // @return
         return $this->builder()
             ->select($results)

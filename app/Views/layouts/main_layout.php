@@ -29,6 +29,12 @@
     <?= $this->include('layouts/footer') ?>
     <!-- Bottom Navigation -->
     <?= $this->include('layouts/bottom-navigation') ?>
+    <!-- Button CTA Back-to-Top -->
+    <button type="button" id="backToTop" class="fixed bottom-5 right-5 p-2 bg-neutral-50 border border-solid border-neutral-300 rounded-full cursor-pointer hover:border-neutral-400 z-999999" aria-label="Kembali ke atas" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
 </body>
 
 </html>
